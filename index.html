@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <script src="src/main.js"></script>
     <link rel="stylesheet" href="src/font-awesome.min.css">
+    <link href="src/bootstrap.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
     <title>kuki cliquer</title>
@@ -14,15 +15,59 @@
 
   <body onload="inicio()">
 
-<p>Tenés <span id="cuantasKukis"></span> Kukis.</p>
+<div class=container>
+<div class=header><h1>el kuki cliquer</h1></div></div>
+
+<div class=container><br><br><br></div>
+
+<div class=container>
+
+  <div class="row">
+    <div class="col-4">
+    <h5>Tenés <span id="cuantasKukis"></span>.</h5>
+    </div>
+
+    <div class="col-4">
+      <div id="billetera" class=container style=visibility:hidden>
+        <kbd>Tenés <span id="cuantoDinero" ></span></kbd>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class=container><br><br><br></div>
+
+<div class=container>    <button onclick="comerKuki()">Comer Kuki</button></div>
+
+<div class=container>
+  <div class="row">
+    <div class="col-4"></div><div class="col-4"></div><div class="col-4" id="smith" style=visibility:hidden>
+  <pre>“si exceptuamos la producción
+             espontánea de la tierra,
+       el conjunto del producto anual
+           es consecuencia
+              del trabajo
+                 productivo.” (1776)</pre></div></div></div>
+
+<div class=container><br><br><br></div>
+
+<div id="cajaCompra" class=container style= visibility:hidden><button id="botonCompra" onclick="comprarKuki()">Conseguir Kuki</button></div>
+
+
+<div class=container><br><br><br></div>
+<div class=container><br><br><br></div>
+<div class=container><br><br><br></div>
+<div class=container><br><br><br></div>
+<div class=container><br><br><br></div>
+<div class=container><br><br><br></div>
+<div class=container>    <button onclick="color()">Fondo Color Random</button>
+    <button onclick="argh()">aaargh... basta</button></div>
 
 <br><br><br>
 
-    <button onclick="comerKuki()">Comer Kuki</button>
+<div class=container><br><br><br></div>
 
-<br><br><br>
 
-    <button onclick="color()">Random Fondo</button>
 
   </body>
 
