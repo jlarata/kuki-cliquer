@@ -36,6 +36,7 @@ function comprarKuki() {
   Fer = 3;
   alert("comprar cuesta dineros")
   document.getElementById("botonCompra").innerHTML = "Comprar Kuki!";
+  document.getElementById("billetera").classList.add("aparecer");
   document.getElementById("billetera").style.visibility="visible"
   } else {
   if (Dinero >=1) {
@@ -51,6 +52,7 @@ function comprarKuki() {
 document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
 } else {
 alert("No te queda más dinero. ¡Buenísimo!");
+document.getElementById("botonTrabajar").classList.add("aparecer2");
 document.getElementById("smith").style.visibility="visible"
     }
   };

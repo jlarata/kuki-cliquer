@@ -16,14 +16,14 @@
   <body onload="inicio()">
 
 <div class=container>
-<div class=header><h1>el kuki cliquer</h1></div></div>
+<div class="header aparecer1"><h1>el kuki cliquer</h1></div></div>
 
 <div class=container><br><br><br></div>
 
 <div class=container>
 
   <div class="row">
-    <div class="col-4">
+    <div class="col-4 aparecer2">
     <h5>Tenés <span id="cuantasKukis"></span>.</h5>
     </div>
 
@@ -37,21 +37,29 @@
 
 <div class=container><br><br><br></div>
 
-<div class=container>    <button onclick="comerKuki()">Comer Kuki</button></div>
+<div class="container aparecer3">
+      <button onclick="comerKuki()">Comer Kuki</button>
+</div>
 
 <div class=container>
   <div class="row">
-    <div class="col-4"></div><div class="col-4"></div><div class="col-4" id="smith" style=visibility:hidden>
-  <pre>“si exceptuamos la producción
+    <div class="col-4"></div><div class="col-4"></div>
+      <div class="col-4" id="smith" style=visibility:collapse;>
+        <pre>“si exceptuamos la producción
              espontánea de la tierra,
        el conjunto del producto anual
            es consecuencia
               del trabajo
-                 productivo.” (1776)</pre></div></div></div>
+                 productivo.” (1776)</pre>
+        <button id="botonTrabajar" onclick="trabajar()">Trabajar</button>
+      </div>
+  </div>
+</div>
 
 <div class=container><br><br><br></div>
 
-<div id="cajaCompra" class=container style= visibility:hidden><button id="botonCompra" onclick="comprarKuki()">Conseguir Kuki</button></div>
+<div id="cajaCompra" class=container style= visibility:hidden>
+<button id="botonCompra" onclick="comprarKuki()">Conseguir Kuki</button></div>
 
 
 <div class=container><br><br><br></div>
