@@ -4,7 +4,6 @@
 var Kukis=1;
 var Dinero=10;
 var Fer=2;
-var Trabajando=0;
 
 function inicio(){
   document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
@@ -60,8 +59,6 @@ document.getElementById("smith").style.visibility="visible"
 }
 
 function trabajar() {
-
-  Trabajando = 1;
   document.getElementById("trabajomuyduro").style.visibility="visible";
   document.getElementById("trabajomuyduro").classList.add("onirico");
   trabajoNoCalificado();
