@@ -4,6 +4,7 @@
 var Kukis=1;
 var Dinero=10;
 var Fer=2;
+var Trabajando=0;
 
 function inicio(){
   document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
@@ -27,7 +28,7 @@ document.getElementById("cuantasKukis").innerHTML=Kukis + " Kukis";
 
 } else {
   alert("No te quedan Kukis. ¡Bien!")
-  alert("¿debeías comprar más?")
+  alert("¿deberías comprar más?")
   document.getElementById("cajaCompra").style.visibility="visible";}
 };
 
@@ -57,6 +58,27 @@ document.getElementById("smith").style.visibility="visible"
     }
   };
 }
+
+function trabajar() {
+
+  Trabajando = 1;
+  document.getElementById("trabajomuyduro").style.visibility="visible";
+  document.getElementById("trabajomuyduro").classList.add("onirico");
+  trabajoNoCalificado();
+  }
+
+function ganaDinero() {
+  Dinero = Dinero +1;
+  document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+};
+
+function trabajoNoCalificado() {
+  const dosSegundos = setInterval(ganaDinero, 2000);
+  }
+
+
+
+
 
   function color(){
       rand1 = Math.floor(Math.random() * ((99- 10) + 1)) + 10

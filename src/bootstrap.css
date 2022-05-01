@@ -77,6 +77,13 @@
   75%  {opacity:1;}
 }
 
+@keyframes onirico {
+  0%   {opacity:0.3; width: 47%; height: 98%;}
+  50%  {opacity:0.6; width: 48%;height: 99%;}
+  100% {opacity:0.3; width: 47%;height: 98%;}
+
+}
+
 .aparecer1 {
   animation-name: transicion1;
   animation-duration: 4s;
@@ -92,10 +99,29 @@
   animation-duration: 4s;
   }
 
+.onirico {
+  animation-name: onirico;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  /*float: right;*/
+
+  }
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/*.container > img {
+  width: 20%;
+}*/
+
+.trabajo {
+  height: 200px;
+  /*border-style: solid;*/
+  display: flex;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -776,7 +802,7 @@ progress {
 .col-4 {
   flex: 0 0 auto;
   width: 33.33333333%;
-}
+  }
 
 .col-5 {
   flex: 0 0 auto;
