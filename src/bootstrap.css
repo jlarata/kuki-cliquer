@@ -77,14 +77,16 @@
   75%  {opacity:1;}
 }
 
-@keyframes onirico {
-  0%   {opacity:0.45; width: 57%; height: 98%;}
-  25%  {opacity:0.55; width: 57.5%; height: 98.5%;}
-  50%  {opacity:0.45; width: 58%;height: 98%;}
-  75%  {opacity:0.35; width: 57.5%; height: 97.5%;}
-  100% {opacity:0.45; width: 57%;height: 98%;}
+@keyframes transicion4 {
+  0%   {opacity:0.4;}
+  100%  {opacity:0.8;}
+  }
 
-}
+@keyframes onirico {
+
+  0%   {width: 49%; height: 88%;margin-top:1%;}
+  100% {width: 50%;height: 89%;margin-top:0,5%;}
+  }
 
 .aparecer1 {
   animation-name: transicion1;
@@ -102,12 +104,20 @@
   }
 
 .onirico {
-  animation-name: onirico;
-  animation-duration: 1s;
+  animation-name: onirico, transicion4;
+  animation-duration: 0.5s, 2s;
   animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
   /*float: right;*/
-
   }
+
+.latente {
+  animation-name: transicion4;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
 *,
 *::before,

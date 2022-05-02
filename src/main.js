@@ -69,7 +69,9 @@ document.getElementById("smith").style.visibility="visible"
 
 function trabajar() {
   document.getElementById("trabajomuyduro").style.visibility="visible";
+  document.getElementById("textotrabajomuyduro").style.visibility="visible";
   document.getElementById("trabajomuyduro").classList.add("onirico");
+  document.getElementById("textotrabajomuyduro").classList.add("latente");
   trabajoNoCalificado();
   }
 
@@ -93,6 +95,7 @@ function modofacil() {
   document.getElementById("billetera").style.visibility="visible";
   document.getElementById("smith").style.visibility="visible";
   document.getElementById("trabajomuyduro").style.visibility="visible";
+  document.getElementById("textotrabajomuyduro").style.visibility="visible";
 
   let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
   let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
