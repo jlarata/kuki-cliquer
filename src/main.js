@@ -6,7 +6,7 @@ var dinero=10;
 var Fer=2;
 
 function inicio(){
-  if (dinero == 1) {
+  if (dinero == 1 || dinero == 0) {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
     } else {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
@@ -53,7 +53,12 @@ function comprarKuki() {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
 
-document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
+if (dinero == 1 || dinero == 0 ) {
+  document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
+  } else {
+  document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
+  }
+
 } else {
 alert("No te queda más dinero. ¡Buenísimo!");
 document.getElementById("botonTrabajar").classList.add("aparecer2");
@@ -70,8 +75,12 @@ function trabajar() {
 
 function ganaDinero() {
   dinero = dinero +1;
-  document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-};
+  if (dinero == 1 || dinero == 0 ) {
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
+    } else {
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
+    }
+  };
 
 function trabajoNoCalificado() {
   const dosSegundos = setInterval(ganaDinero, 2000);
@@ -94,7 +103,7 @@ function modofacil() {
     } else {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
     }
-  if (dinero == 1) {
+  if (dinero == 1 || dinero == 0 ) {
   document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
   } else {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
