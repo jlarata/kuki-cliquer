@@ -1,28 +1,32 @@
 
 
 
-var Kukis=1;
+var kukis=1;
 var Dinero=10;
 var Fer=2;
 
 function inicio(){
-  document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
-  if (Kukis == 1) {
-  document.getElementById("cuantasKukis").innerHTML=Kukis + " Kuki";
+  if (Dinero == 1) {
+    document.getElementById("cuantoDinero").innerHTML=Dinero + " dinero";
+    } else {
+    document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+  }
+  if (kukis == 1) {
+  document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
 } else {
-  document.getElementById("cuantasKukis").innerHTML=Kukis + " Kukis";
+  document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
 };
 
 function comerKuki() {
-  if (Kukis >=1) {
-  Kukis = Kukis -1;
+  if (kukis >=1) {
+  kukis = kukis -1;
 alert("Te comiste una Kuki. ¡Bien hecho!");
 
-if (Kukis == 1) {
-document.getElementById("cuantasKukis").innerHTML=Kukis + " Kuki";
+if (kukis == 1) {
+document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
 } else {
-document.getElementById("cuantasKukis").innerHTML=Kukis + " Kukis";
+document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
 
 } else {
@@ -41,12 +45,12 @@ function comprarKuki() {
   } else {
   if (Dinero >=1) {
   Dinero = Dinero -1
-  Kukis = Kukis +1;
+  kukis = kukis +1;
 
-  if (Kukis == 1) {
-  document.getElementById("cuantasKukis").innerHTML=Kukis + " Kuki";
+  if (kukis == 1) {
+  document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
 } else {
-  document.getElementById("cuantasKukis").innerHTML=Kukis + " Kukis";
+  document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
 
 document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
@@ -75,20 +79,43 @@ function trabajoNoCalificado() {
 
 
 
+function modofacil() {
+  document.getElementById("cajaCompra").style.visibility="visible";
+  document.getElementById("billetera").style.visibility="visible";
+  document.getElementById("smith").style.visibility="visible";
+  document.getElementById("trabajomuyduro").style.visibility="visible";
+
+  let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
+  let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
+  kukis = cuantasKukisQueres;
+  Dinero = cuantoDineroQueres;
+  if (kukis == 1) {
+  document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
+    } else {
+  document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
+    }
+  if (Dinero == 1) {
+  document.getElementById("cuantoDinero").innerHTML=Dinero + " dinero";
+  } else {
+    document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+  }
+  alert("Bienvenidx al modo facil, tenés " + kukis + " Kukis y " +
+  Dinero + " dineros");
+  }
 
 
-  function color(){
-      rand1 = Math.floor(Math.random() * ((99- 10) + 1)) + 10
-      rand2 = Math.floor(Math.random() * ((99- 10) + 1)) + 10
-      rand3 = Math.floor(Math.random() * ((99- 10) + 1)) + 10
-      concatenado = rand1.toString() + rand2.toString() + rand3.toString()
-      var color = "#" + concatenado
-      document.body.style.background = color;
-    };
+function color(){
+    rand1 = Math.floor(Math.random() * ((99- 10) + 1)) + 10
+    rand2 = Math.floor(Math.random() * ((99- 10) + 1)) + 10
+    rand3 = Math.floor(Math.random() * ((99- 10) + 1)) + 10
+    concatenado = rand1.toString() + rand2.toString() + rand3.toString()
+    var color = "#" + concatenado
+    document.body.style.background = color;
+  };
 
-  function argh() {
-      document.body.style.background = "#ffffff"
-    };
+function argh() {
+  document.body.style.background = "#ffffff"
+  };
 
 
 /* LA FUNCIÓN DE BALLESTO let Numero = Number(prompt("Te comiste una Kuki"))
