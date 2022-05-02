@@ -2,14 +2,14 @@
 
 
 var kukis=1;
-var Dinero=10;
+var dinero=10;
 var Fer=2;
 
 function inicio(){
-  if (Dinero == 1) {
-    document.getElementById("cuantoDinero").innerHTML=Dinero + " dinero";
+  if (dinero == 1) {
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
     } else {
-    document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
   }
   if (kukis == 1) {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
@@ -43,8 +43,8 @@ function comprarKuki() {
   document.getElementById("billetera").classList.add("aparecer");
   document.getElementById("billetera").style.visibility="visible"
   } else {
-  if (Dinero >=1) {
-  Dinero = Dinero -1
+  if (dinero >=1) {
+  dinero = dinero -1
   kukis = kukis +1;
 
   if (kukis == 1) {
@@ -53,7 +53,7 @@ function comprarKuki() {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
 
-document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
 } else {
 alert("No te queda más dinero. ¡Buenísimo!");
 document.getElementById("botonTrabajar").classList.add("aparecer2");
@@ -69,8 +69,8 @@ function trabajar() {
   }
 
 function ganaDinero() {
-  Dinero = Dinero +1;
-  document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+  dinero = dinero +1;
+  document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
 };
 
 function trabajoNoCalificado() {
@@ -88,19 +88,19 @@ function modofacil() {
   let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
   let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
   kukis = cuantasKukisQueres;
-  Dinero = cuantoDineroQueres;
+  dinero = cuantoDineroQueres;
   if (kukis == 1) {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
     } else {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
     }
-  if (Dinero == 1) {
-  document.getElementById("cuantoDinero").innerHTML=Dinero + " dinero";
+  if (dinero == 1) {
+  document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
   } else {
-    document.getElementById("cuantoDinero").innerHTML=Dinero + " dineros";
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
   }
   alert("Bienvenidx al modo facil, tenés " + kukis + " Kukis y " +
-  Dinero + " dineros");
+  dinero + " dineros");
   }
 
 

@@ -78,9 +78,11 @@
 }
 
 @keyframes onirico {
-  0%   {opacity:0.3; width: 47%; height: 98%;}
-  50%  {opacity:0.6; width: 48%;height: 99%;}
-  100% {opacity:0.3; width: 47%;height: 98%;}
+  0%   {opacity:0.45; width: 57%; height: 98%;}
+  25%  {opacity:0.55; width: 57.5%; height: 98.5%;}
+  50%  {opacity:0.45; width: 58%;height: 98%;}
+  75%  {opacity:0.35; width: 57.5%; height: 97.5%;}
+  100% {opacity:0.45; width: 57%;height: 98%;}
 
 }
 
