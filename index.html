@@ -5,8 +5,9 @@
   <head>
     <meta charset="utf-8">
     <script src="src/main.js"></script>
-    <link rel="stylesheet" href="src/font-awesome.min.css">
-    <link href="src/bootstrap.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="src/font-awesome.min.css">-->
+    <!--<link href="src/bootstrap.css" rel="stylesheet">-->
+    <link href="src/micss.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
     <title>kuki cliquer</title>
@@ -18,51 +19,49 @@
 <div class=container>
 <div class="header aparecer1"><h1>el kuki cliquer</h1></div></div>
 
-<div class=container><br><br><br></div>
-
 <div class=container>
 
   <div class="row">
-    <div class="col-4 aparecer2">
+    <div class="col-3 aparecer2">
     <h5>Tenés <span id="cuantasKukis"></span>.</h5>
     </div>
 
-    <div class="col-4">
+    <div class="col-3">
       <div id="billetera" class=container style=visibility:hidden>
-        <kbd>Tenés <span id="cuantoDinero" ></span></kbd>
+        <alterna>Tenés <span id="cuantoDinero" ></span></alterna>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container aparecer3">
-      <button onclick="comerKuki()">Comer Kuki</button>
+<div class="container aparecer3 col-3">
+      <button class="btn" onclick="comerKuki()">Comer Kuki</button>
 </div>
 
 <div class=container>
   <div class="row">
-    <div class="col-4"></div><div class="col-4"></div>
-      <div class="col-4" id="smith" style=visibility:hidden>
+    <div class="col-3"></div><div class="col-3"></div>
+      <div class="col-3" id="smith" style=visibility:hidden>
         <pre>“si exceptuamos la producción
              espontánea de la tierra,
        el conjunto del producto anual
            es consecuencia
               del trabajo
                  productivo.” (1776)</pre>
-        <button id="botonTrabajar" onclick="trabajar()">Trabajar</button>
+        <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button>
       </div>
     </div>
 </div>
 
 <div class=container>
   <div class=row>
-    <div class=col-4>
+    <div class=col-3>
       <div id="cajaCompra" class=container style= visibility:hidden>
-      <button id="botonCompra" onclick="comprarKuki()">Conseguir Kuki</button>
+      <button id="botonCompra" class="btn" onclick="comprarKuki()">Conseguir Kuki</button>
       </div>
     </div>
-    <div class=col-4></div>
-    <div class="col-4">
+    <div class=col-3></div>
+    <div class="col-3">
       <div class=trabajo><img id="trabajomuyduro" src=src/tra.jpg  style=visibility:hidden></div>
       <div class="row"><div class="col-2"></div><div class="col">
         <p class="text-muted small text-justify" id="textotrabajomuyduro" style=visibility:hidden>estás trabajando muy duro en el <em>kukicall center</em>
@@ -73,19 +72,14 @@
 </div>
 
 
-<div class=container><br><br><br></div>
+
 <div class=container>    <button onclick="color()">Fondo Color Random</button>
     <button onclick="argh()">aaargh... basta</button>
-    <button class="btn btn-success" onclick="modofacil()">activar modo fácil</button>
+    <button class="btn" onclick="modofacil()">activar modo fácil</button>
   </div>
+  <br>
 
-<br><br><br>
-
-<div class=container><br><br><br></div>
-
-
-
-  </body>
+</body>
 
 
 </html>
