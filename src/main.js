@@ -3,7 +3,9 @@
 
 var kukis=1;
 var dinero=10;
-var Fer=2;
+var fer=2;
+var primeracomida=true;
+var primerasinkukis=true;
 
 function inicio(){
   if (dinero == 1 || dinero == 0) {
@@ -20,24 +22,37 @@ function inicio(){
 
 function comerKuki() {
   if (kukis >=1) {
-  kukis = kukis -1;
-alert("Te comiste una Kuki. ¡Bien hecho!");
-
-if (kukis == 1) {
-document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-} else {
-document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-}
-
-} else {
-  alert("No te quedan Kukis. ¡Bien!")
-  alert("¿deberías comprar más?")
-  document.getElementById("cajaCompra").style.visibility="visible";}
+    if (primeracomida == true) {
+      primeracomida = false;
+      kukis = kukis -1;
+      alert("Te comiste una Kuki. ¡Bien hecho!");
+      if (kukis == 1) {
+        document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
+        } else {
+        document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
+        }
+      } else {
+        kukis = kukis -1;
+        if (kukis == 1) {
+          document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
+          } else {
+            document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
+          }
+        }
+    } else if (primerasinkukis == true) {
+      primerasinkukis = false;
+      alert("No te quedan Kukis. ¡Bien!")
+      alert("¿deberías comprar más?")
+      document.getElementById("cajaCompra").style.visibility="visible";
+    } else {
+      alert("No te quedan Kukis. ¡Bien!")
+      /*document.write("No te quedan Kukis. ¡Bien!");*/
+    }
 };
 
 function comprarKuki() {
-  if (Fer == 2) {
-  Fer = 3;
+  if (fer == 2) {
+  fer = 3;
   alert("comprar cuesta dineros")
   document.getElementById("botonCompra").innerHTML = "Comprar Kuki!";
   document.getElementById("billetera").classList.add("aparecer");
