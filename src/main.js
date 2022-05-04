@@ -44,6 +44,7 @@ function comerKuki() {
       alert("No te quedan Kukis. ¡Bien!")
       alert("¿deberías comprar más?")
       document.getElementById("cajaCompra").style.visibility="visible";
+      document.getElementById("botonCompra").classList.add("aparecer1");
     } else {
       alert("No te quedan Kukis. ¡Bien!")
       /*document.write("No te quedan Kukis. ¡Bien!");*/
@@ -55,8 +56,9 @@ function comprarKuki() {
   fer = 3;
   alert("comprar cuesta dineros")
   document.getElementById("botonCompra").innerHTML = "Comprar Kuki!";
-  document.getElementById("billetera").classList.add("aparecer");
-  document.getElementById("billetera").style.visibility="visible"
+  document.getElementById("botonCompra").classList.replace("aparecer1", "atenti1");
+  document.getElementById("billetera").style.visibility="visible";
+  document.getElementById("billetera").classList.add("aparecer1");
   } else {
   if (dinero >=1) {
   dinero = dinero -1
