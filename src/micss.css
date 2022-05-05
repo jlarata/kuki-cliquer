@@ -79,6 +79,17 @@ alterna {
     border-radius: 0.3rem;
   }
 
+.generalb {
+  /*padding-left: 0.4em;*/
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-top: 1%;
+  }
+
+.generalc {
+  justify-content: center;
+  }
+
 .btn {
   background-color: #f1f1f1;
   color: black;
@@ -92,9 +103,10 @@ alterna {
   }
 
 .chico {
-  width:100%;
+  display:grid;
+  margin-left: 2%;
+  /*width:100%;*/
   /*padding: 0;*/
-  margin-left: 5%;
   }
 
 .btn:hover {
@@ -128,6 +140,14 @@ alterna {
   margin-left: auto;*/
 }
 
+.container img {
+  max-height: 100%;
+  max-width: 100%;
+  display:grid;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
 .header {
   flex: 0 0 auto;
   width: 100%;
@@ -136,7 +156,7 @@ alterna {
 
 
 .row {
-  display: flex;
+  display:flex;
   flex-wrap: nowrap;
   /*margin-top:
   margin-right:
@@ -160,16 +180,18 @@ alterna {
 .col-3 {
   flex: 0 0 auto;
   width: 25%;
-  padding-left: 5%;
-  padding-top: 1%;
 }
 
 .col-4 {
   flex: 0 0 auto;
   width: 33.33333333%;
-  padding-left: 5%;
-  padding-top: 1%;
   }
+
+.general {
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1%;
+}
 
 .col-5 {
   flex: 0 0 auto;
@@ -292,13 +314,6 @@ alterna {
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-.trabajo {
-  height: 200px;
-  /*border-style: solid;*/
-  display: flex;
-  justify-content: center;
 }
 
 .evanescente {
