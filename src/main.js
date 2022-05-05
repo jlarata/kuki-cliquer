@@ -6,6 +6,8 @@ var dinero=10;
 var fer=2;
 var primeracomida=true;
 var primerasinkukis=true;
+var trabajando=false;
+var esfuerzo=0;
 
 function inicio(){
   if (dinero == 1 || dinero == 0) {
@@ -94,6 +96,12 @@ function trabajar() {
 
 function ganaDinero() {
   dinero = dinero +1;
+/* Hace visible el botón esforzarse cuando se sume una cantidad de dinero*/
+if (dinero >= 5) {
+document.getElementById("botonEsforzarse").classList.add("aparecer2");
+document.getElementById("botonEsforzarse").style.visibility="visible";
+  }
+/* Actualiza la billetera con singular dinero o plural dineros*/
   if (dinero == 1 || dinero == 0 ) {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
     } else {
@@ -102,10 +110,30 @@ function ganaDinero() {
   };
 
 function trabajoNoCalificado() {
-  const dosSegundos = setInterval(ganaDinero, 2000);
+  if (trabajando == false) {
+    trabajando = true;
+    const dosSegundos = setInterval(ganaDinero, 2000);
+    }
   }
 
+function esforzarse() {
 
+  /* Aquí podría hacer una segunda clase-animacion un poquito más a la derecha
+  y una variable que se active y desactive para que cada click active una u otra
+  eso daría probablemente más dinamismo al "no pasa nada" */
+  esfuerzo = esfuerzo + 1;
+  document.getElementById("noPasaNada").style.visibility="visible";
+  document.getElementById("noPasaNada").classList.add("evanescente");
+  const timeOutEsf = setTimeout(esforzarseout, 500);
+  if (esfuerzo >= 12) {
+    document.getElementById("botonEsforzarseMucho").style.visibility="visible";
+    }
+  }
+
+function esforzarseout() {
+  document.getElementById("noPasaNada").style.visibility="hidden";
+  document.getElementById("noPasaNada").classList.remove("evanescente");
+  }
 
 function modofacil() {
   document.getElementById("cajaCompra").style.visibility="visible";
@@ -118,6 +146,8 @@ function modofacil() {
   let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
   kukis = cuantasKukisQueres;
   dinero = cuantoDineroQueres;
+  document.getElementById("botonEsforzarse").style.visibility="visible";
+  document.getElementById("botonEsforzarseMucho").style.visibility="visible";
   if (kukis == 1) {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
     } else {

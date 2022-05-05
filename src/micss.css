@@ -91,6 +91,12 @@ alterna {
   transition-duration: 0.4s;
   }
 
+.chico {
+  width:100%;
+  /*padding: 0;*/
+  margin-left: 5%;
+  }
+
 .btn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
@@ -228,6 +234,11 @@ alterna {
   100%  {opacity:0.8;}
   }
 
+@keyframes transicion5 {
+  0%   {opacity:0.8; top:-60%;color:red;}
+  100%  {opacity:0.1;top:-95%;color:black;}
+  }
+
 @keyframes onirico {
 
   0%   {width: 49%; height: 88%;margin-top:1%;}
@@ -290,6 +301,11 @@ alterna {
   justify-content: center;
 }
 
+.evanescente {
+  animation-name: transicion5;
+  width: 150%;
+  animation-duration: 0.5s;
+}
 
 /**,
 *::before,

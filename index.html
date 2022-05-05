@@ -39,13 +39,18 @@
       </div>
     </div>
     <div class="col-3" id="smith" style=visibility:hidden>
-      <pre>“si exceptuamos la producción
+      <div><pre>“si exceptuamos la producción
            espontánea de la tierra,
      el conjunto del producto anual
          es consecuencia
             del trabajo
-               productivo.” (1776)</pre>
-      <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button>
+               productivo.” (1776)</pre></div>
+        <div class="row">
+              <div class="col4"> <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
+              <div class="col4" style="position: relative;"><button id="botonEsforzarse" class="btn chico" onclick="esforzarse()" style="visibility:hidden;">Esforzarse</button>
+              <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
+              <div class="col4"><button id="botonEsforzarseMucho" class="btn chico" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button></div>
+        </div>
     </div>
   </div>
 </div>
@@ -56,10 +61,11 @@
     </div>
     <div class="col-3"></div>
     <div class="col-3">
-      <div class=trabajo><img id="trabajomuyduro" src=src/tra.jpg  style=visibility:hidden></div>
+      <div class=trabajo><img id="trabajomuyduro" src=src/wrk.png  style=visibility:hidden></div>
       <div class="row"><div class="col-2"></div><div class="col">
-        <p class="text-muted small text-justify" id="textotrabajomuyduro" style=visibility:hidden>estás trabajando muy duro en el <em>kukicall center</em>
-        <br>tu salario es 1 dinero por segundo</p></div>
+        <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
+          <li>estás trabajando muy duro en el <em>kukicall center</em></li>
+          <li>tu salario es 1 dinero por segundo</li></ul>
       </div>
     </div>
   </div>
