@@ -70,6 +70,8 @@ small, .small {
   color: #6c757d;
   }
 
+ul { padding-left: 0; }
+
 alterna {
     padding: 1%;
     color: #fff;
@@ -79,16 +81,36 @@ alterna {
     border-radius: 0.3rem;
   }
 
+
+.general {
+  display:flex;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1%;
+  }
+
 .generalb {
-  /*padding-left: 0.4em;*/
-  margin-left: 1em;
-  margin-right: 1em;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 2em;
+  padding-right: 2em;
   padding-top: 1%;
   }
 
 .generalc {
   justify-content: center;
   }
+
+.especial {
+  padding-left: 1.5%;
+  width: 95%;
+  margin-left: 1.5%;
+  border: 0.5px solid #000;
+  border-radius: 1%;
+  transition-duration: 0.4s;
+  box-shadow: 0px 8px 16px 5px rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
 .btn {
   background-color: #f1f1f1;
@@ -101,6 +123,12 @@ alterna {
   text-align: center;
   transition-duration: 0.4s;
   }
+
+.estable {
+  margin-left: 2%;
+  margin-right: 2%;
+  max-width: 60%;
+}
 
 .chico {
   display:grid;
@@ -143,9 +171,9 @@ alterna {
 .container img {
   max-height: 100%;
   max-width: 100%;
-  display:grid;
+  /*display:grid;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;*/
   }
 
 .header {
@@ -158,6 +186,15 @@ alterna {
 .row {
   display:flex;
   flex-wrap: nowrap;
+  /*margin-top:
+  margin-right:
+  margin-left: */
+}
+
+.rowjustificada {
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: center;
   /*margin-top:
   margin-right:
   margin-left: */
@@ -186,12 +223,6 @@ alterna {
   flex: 0 0 auto;
   width: 33.33333333%;
   }
-
-.general {
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 1%;
-}
 
 .col-5 {
   flex: 0 0 auto;
@@ -263,8 +294,8 @@ alterna {
 
 @keyframes onirico {
 
-  0%   {width: 49%; height: 88%;margin-top:1%;}
-  100% {width: 50%;height: 89%;margin-top:0,5%;}
+  0%   {width: 20%; height: 48%;margin-top:1%;}
+  100% {width: 21%;height: 49%;margin-top:0,5%;}
   }
 
 @keyframes derojoanegro {

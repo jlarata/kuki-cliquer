@@ -16,10 +16,13 @@
 
   <body onload="inicio()">
 
+<div class="container">
+<div class="especial">
+
 <div class=container>
 <div class="header aparecer1"><h1>el kuki cliquer</h1></div></div>
 
-<div class="container general">
+<div class="container">
 
   <div class="row">
     <div class="col-3 aparecer2"><ul style="list-style-type:none;">
@@ -27,13 +30,13 @@
     <li><br></li>
     <li><button class="btn aparecer3" onclick="comerKuki()">Comer Kuki</button></li>
     <li class="aparecer4"><br><hr><br></li>
-    <li><div id="cajaCompra" class=container style= visibility:hidden>
+    <li><div id="cajaCompra" class="container" style= visibility:hidden>
     <button  id="botonCompra" class="btn" onclick="comprarKuki()">Conseguir Kuki</button>
     </div></li>
     </ul>
     </div>
 
-    <div class="col-3 general">
+    <div class="col-3">
       <div id="billetera" class=container style=visibility:hidden>
         <alterna>Tenés <span id="cuantoDinero" ></span></alterna>
       </div>
@@ -45,11 +48,11 @@
          es consecuencia
             del trabajo
                productivo.” (1776)</pre></div>
-        <div class="row">
-            <div class=col-3>  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
-            <div class=col-3 style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="visibility:hidden;">Esforzarse</button>
+        <div class="rowjustificada">
+            <div class="col-3">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
+            <div class="col-3" style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="visibility:hidden;">Esforzarse</button>
             <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
-            <div class=col-3>  <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button></div>
+            <div class="col-3">  <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button></div>
         </div>
     </div>
   </div>
@@ -57,17 +60,16 @@
 
 <div class="container aparecer3">
   <div class=row>
-    <div class="col-3 general">
+    <div class="col-3">
     </div>
-    <div class="col-3 general"></div>
-    <div class="col-3 general">
-      <div><img id="trabajomuyduro" src=src/wrk.png  style=display:none></div>
-      <div class="row"><div>
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class=generalb><img id="trabajomuyduro" src=src/wrk.png  style=display:none></div>
+      <div class="row">
         <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
           <li>estás trabajando muy duro en el <em>kukicall center</em></li>
           <li>tu salario es 1 dinero por segundo</li></ul>
       </div>
-    </div>
   </div>
 </div>
 
@@ -75,8 +77,8 @@
 
 
 </div>
-</div>
-</div>
+
+
 
 
 
@@ -87,6 +89,8 @@
     <button class="btn" onclick="modofacil()">activar modo fácil</button>
   </div></div>
   <br>
+</div>
+</div>
 
 </body>
 
