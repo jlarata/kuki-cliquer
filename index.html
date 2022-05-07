@@ -22,10 +22,10 @@
 <div class=container>
 <div class="header aparecer1"><h1>el kuki cliquer</h1></div></div>
 
-<div class="container">
+<div class="container rowestructural">
 
-  <div class="row">
-    <div class="col-3 aparecer2"><ul style="list-style-type:none;">
+
+    <div class="col-3 aparecer2 generalc"><ul style="list-style-type:none;">
     <li><h5>Tenés <span id="cuantasKukis"></span>.</h5></li>
     <li><br></li>
     <li><button class="btn aparecer3" onclick="comerKuki()">Comer Kuki</button></li>
@@ -37,8 +37,8 @@
     </div>
 
     <div class="col-3">
-      <div id="billetera" class=container style=visibility:hidden>
-        <alterna>Tenés <span id="cuantoDinero" ></span></alterna>
+      <div id="billetera" class=row style=visibility:hidden>
+        <alterna>Tenés <span id="cuantoDinero"></span></alterna>
       </div>
     </div>
     <div class="col-5" id="smith" style=visibility:hidden>
@@ -56,26 +56,25 @@
         </div>
     </div>
   </div>
-</div>
 
-<div class="container aparecer3">
-  <div class=row>
+
+<div class="aparecer3 rowestructural">
+
     <div class="col-3">
     </div>
     <div class="col-3"></div>
     <div class="col-6">
-      <div class=generalb><img id="trabajomuyduro" src=src/wrk.png  style=display:none></div>
-      <div class="row">
-        <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
-          <li>estás trabajando muy duro en el <em>kukicall center</em></li>
-          <li>tu salario es 1 dinero por segundo</li></ul>
-      </div>
+      <div class="cajatrabajo"><img id="trabajomuyduro" src=src/wrk.png  style=display:none></div>
+      <div class="cajatrabajo">
+        <div class="col-3"></div>
+      <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
+      <li>estás trabajando muy duro en el <em>kukicall center</em></li>
+      <li>tu salario es 1 dinero por segundo</li></ul></div>
+
+    </div>
   </div>
-</div>
 
-</div>
-
-  <div class="footer"><div><button class=btn onclick="desarrollo()">desarrollo</button></div>
+  <div class="footer" id=footer><div><button class=btn onclick="desarrollo()">desarrollo</button></div>
 
     <div id="desarrollo" style=display:none><button onclick="color()">Fondo Color Random</button>
       <button onclick="argh()">aaargh... basta</button>

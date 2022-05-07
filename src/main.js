@@ -139,6 +139,13 @@ function desarrollo() {
   let passwd = String(prompt("contraseña!"))
   if (passwd=="ocho"){
   document.getElementById("desarrollo").style.display="block";
+  document.getElementById("footer").style.border="0.5px solid #000";
+
+  var estructurales = document.querySelectorAll('.rowestructural');
+  for(var i=0; i<estructurales.length; i++){
+      estructurales[i].style.border = "0.5px solid #000";
+      }
+
   }
 }
 
