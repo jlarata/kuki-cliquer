@@ -10,6 +10,7 @@ html {
 
 body {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -108,7 +109,7 @@ alterna {
   }
 
 .especial {
-  max-height: 45%;
+  min-height: 80vh;
   padding-left: 1.5%;
   width: 94%;
   height: inherit;
@@ -196,6 +197,12 @@ alterna {
   padding: 2em 0em 4em 2em;
   }
 
+.footer {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  }
 
 .row {
   max-height: 5%;
