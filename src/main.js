@@ -94,8 +94,8 @@ function trabajar() {
   trabajoNoCalificado();
   }
 
-function ganaDinero() {
-  dinero = dinero +1;
+function ganaDinero(salario) {
+  dinero = dinero + salario;
 /* Hace visible el botón esforzarse cuando se sume una cantidad de dinero*/
 if (dinero >= 5) {
 document.getElementById("botonEsforzarse").classList.add("aparecer2");
@@ -112,7 +112,7 @@ document.getElementById("botonEsforzarse").style.visibility="visible";
 function trabajoNoCalificado() {
   if (trabajando == false) {
     trabajando = true;
-    const dosSegundos = setInterval(ganaDinero, 2000);
+    const dosSegundos = setInterval(ganaDinero, 500, 1);
     }
   }
 
@@ -121,6 +121,11 @@ function esforzarse() {
   /* Aquí podría hacer una segunda clase-animacion un poquito más a la derecha
   y una variable que se active y desactive para que cada click active una u otra
   eso daría probablemente más dinamismo al "no pasa nada" */
+
+  /* alternativamente hacer una funcion que incluya una llamada al lugar en que
+   está el mouse al momento de hacer click y que la animación surja ahí. eso por
+   cierto elimina toda la molestia del div position absolute*/
+
   esfuerzo = esfuerzo + 1;
   document.getElementById("noPasaNada").style.visibility="visible";
   document.getElementById("noPasaNada").classList.add("evanescente");
