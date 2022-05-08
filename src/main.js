@@ -8,6 +8,7 @@ var primeracomida=true;
 var primerasinkukis=true;
 var trabajando=false;
 var esfuerzo=0;
+var trabajandodobleturno=false;
 
 function inicio(){
   if (dinero == 1 || dinero == 0) {
@@ -111,10 +112,24 @@ document.getElementById("botonEsforzarse").style.visibility="visible";
 
 function trabajoNoCalificado() {
   if (trabajando == false) {
-    trabajando = true;
-    const dosSegundos = setInterval(ganaDinero, 500, 1);
+      trabajando = true;      dosporsegundo = setInterval(ganaDinero, 1000, 2);
     }
   }
+
+function trabajoDurisimo() {
+  if (trabajandodobleturno == false) {
+    trabajandodobleturno = true;
+    dosmasporsegundo = setInterval(ganaDinero, 500, 1);
+    }
+  }
+
+function trabajoCalificado() {
+  clearInterval(dosporsegundo);
+  clearInterval(dosmasporsegundo);
+  trabajando = false;
+  trabajandodobleturno = false;
+  }
+
 
 function esforzarse() {
 
