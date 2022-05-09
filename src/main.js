@@ -21,7 +21,45 @@ function inicio(){
 } else {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
+
+document.getElementById('footer').onclick = function clickEvent(cartelspam) {
+      var rect = cartelspam.target.getBoundingClientRect();
+      var x = cartelspam.clientX - rect.left; //x position within the element.
+      var y = cartelspam.clientY - rect.top;  //y position within the element.
+
+      document.getElementById("cajaPruebas").style.marginLeft = x+"px";
+      document.getElementById("cajaPruebas").style.marginTop = y+"px";
+      document.getElementById("cajaPruebas").style.visibility = "visible";
+    }
+
+document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(masuno) {
+  var rect = masuno.target.getBoundingClientRect();
+  var x = masuno.clientX - rect.left; //x position within the element.
+  var y = masuno.clientY - rect.top;  //y position within the element.
+  document.getElementById("ganamasuno").style.marginLeft = x+"px";
+
+
+  /*PROBLEMAS ACTUALES:
+
+  el +1 queda dentro de la caja o medio random se sale
+  no logro meterle animacion al +1*/
+
+
+
+  document.getElementById("ganamasuno").style.marginBottom = "2"*y+"px";
+  document.getElementById("ganamasuno").classList.add("evanescente");
+  document.getElementById("ganamasuno").style.visibility = "visible";
+
+
+  animaganamasuno();
+
+  }
+
+
 };
+
+
+
 
 function comerKuki() {
   if (kukis >=1) {
@@ -170,10 +208,22 @@ function esforzarseMucho() {
     }
 /* hacer un if que al sumar suficiente "esfuerzo" haga visible el boton trabajoB*/
   if (esfuerzo >= 20) {
-    document.getElementById("botontrabajoB").style.display="block";
+    document.getElementById("botontrabajoB").style.display=null;
     }
   };
 
+/*function animaganamasuno() {
+
+  document.getElementById("ganamasuno").style.visibility="visible";
+  document.getElementById("ganamasuno").classList.add("evanescente");
+  const timeOutmasuno = setTimeout(animaganamasunoout, 500);
+    }
+
+function animaganamasunoout() {
+  document.getElementById("ganamasuno").style.visibility="hidden";
+  document.getElementById("ganamasuno").classList.remove("evanescente");
+  }
+*/
 
 function desarrollo() {
   let passwd = String(prompt("contraseña!"))
@@ -195,7 +245,8 @@ function modofacil() {
   document.getElementById("smith").style.visibility="visible";
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
-  document.getElementById("botontrabajoB").style.display="block";
+  document.getElementById("botontrabajoB").style.display=null;
+
 
   let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
   let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));

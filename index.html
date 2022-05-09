@@ -4,7 +4,7 @@
 
   <head>
     <meta charset="utf-8">
-    <script src="src/main.js"></script>
+
     <!--<link rel="stylesheet" href="src/font-awesome.min.css">-->
     <!--<link href="src/bootstrap.css" rel="stylesheet">-->
     <link href="src/micss.css" rel="stylesheet">
@@ -41,18 +41,23 @@
         <alterna>Tenés <span id="cuantoDinero"></span></alterna>
       </div>
     </div>
-    <div class="col-5" id="smith" style=visibility:hidden>
-      <div><pre>“si exceptuamos la producción
+    <div class="col-5 citasybotonera" id="smith" style="visibility:hidden;">
+      <div class="citas">
+        <!-- esto iba con <pre> pero me estaba volciendo loco --> <p><em>“si exceptuamos la producción
            espontánea de la tierra,
      el conjunto del producto anual
          es consecuencia
             del trabajo
-               productivo.” (1776)</pre></div>
+               productivo.” (1776)</em><p/></div>
         <div class="botoneratrabajo">
             <div class="col-3">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
             <div class="col-3" style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="visibility:hidden;">Esforzarse</button>
             <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
-            <div class="col-3">  <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse<invi>_</invi><em>mucho</em></button></div>
+            <div class="col-3">
+              <p id="ganamasuno" style=visibility:hidden>+1</p>
+              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button>
+            </div>
+            <div class="col-3" id="botontrabajoB" style=display:none><button class="btn" onclick="trabajoDurisimo()">Trabajar doble turno</button></div>
         </div>
     </div>
   </div>
@@ -85,14 +90,17 @@
 
       <div class="row trabajosydias">
           <div class="col-5">
-          <div><button id="botontrabajoB" class="btn" onclick="trabajoDurisimo()" style=display:none>Trabajar de noche</button>
-          </div>
+          <!--<div><button id="botontrabajoB" class="btn" onclick="trabajoDurisimo()" style=display:none>Trabajar de noche</button>
+          </div>-->
         </div>
       </div>
     </div>
   </div>
 
-  <div class="footer" id=footer><div><button title="contraseña string 8"  class=btn onclick="desarrollo()">desarrollo</button></div>
+  <div class="footer" id=footer>
+    <div><button title="contraseña string 8"  class=btn onclick="desarrollo()">desarrollo</button>
+    </div>
+    <div id=cajaPruebas style=visibility:hidden>asd</div>
 
     <div id="desarrollo" style=display:none>
       <button onclick="color()">Fondo Color Random</button>
@@ -106,7 +114,7 @@
 </div>
 
 
-
+<script src="src/main.js"></script>
 </body>
 
 
