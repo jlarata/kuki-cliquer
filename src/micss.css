@@ -235,7 +235,7 @@ alterna {
 }
 
 .rowestructural {
-  
+
   height: 28vh;
   width: 98%;
   display: flex;
@@ -349,8 +349,8 @@ alterna {
 
 @keyframes onirico {
 
-  0%   {width: 25%; height: 98%;}
-  100% {width: 26%;height: 99%;}
+  0%   {transform: scale(1, 1);}
+  100% {transform: scale(1.05, 1.05);}
   }
 
 @keyframes derojoanegro {
@@ -388,7 +388,7 @@ alterna {
 
 .onirico {
   animation-name: onirico, transicion4;
-  animation-duration: 0.5s, 2s;
+  animation-duration: 1s, 1.8s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
