@@ -48,7 +48,7 @@
          es consecuencia
             del trabajo
                productivo.” (1776)</pre></div>
-        <div class="rowjustificada">
+        <div class="botoneratrabajo">
             <div class="col-3">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
             <div class="col-3" style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="visibility:hidden;">Esforzarse</button>
             <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
@@ -58,19 +58,37 @@
   </div>
 
 
-<div class="aparecer3 rowestructural">
+<div class="aparecer3 rowestructural trabajosydias">
 
-    <div class="col-3">
+    <!--<div class="col-3">
     </div>
-    <div class="col-3"></div>
-    <div class="col-6">
-      <div class="cajatrabajo"><img id="trabajomuyduro" src=src/wrk.png  style=display:none></div>
-      <div class="cajatrabajo">
-        <div class="col-3"></div>
-      <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
-      <li>estás trabajando muy duro en el <em>kukicall center</em></li>
-      <li>tu salario es 2 dineros por segundo</li></ul></div>
+    <div class="col-3"></div>-->
+    <div class="col">
+      <div class="row trabajosydias">
+        <div class="col-5">
+          <div class="cajatrabajo"><img id="trabajomuyduro" src=src/wrk.png  style=display:none></div>
+          <div class="cajatrabajo">
+            <div class="col-3"></div>
+          <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
+          <li>estás trabajando muy duro en el <em>kukicall center</em></li>
+          <li>tu salario es 2 dineros por segundo</li></ul></div>
+        </div>
+        <div class="col-3" id="cajasegundotrabajo" style=display:none>
+            <div class="cajatrabajo"><img id="trabajoentregas" src=src/wrk.png></div>
+            <div class="cajatrabajo">
+              <div class="col-2"></div>
+            <ul style="list-style-type:none;" class="text-muted small text-justify" id="textodelivery">
+            <li>tarde y noche sin parar</li>
+            <li>en <em>kuki-entregas</em></li></ul></div>
+        </div>
+      </div>
 
+      <div class="row trabajosydias">
+          <div class="col-5">
+          <div><button id="botontrabajoB" class="btn" onclick="trabajoDurisimo()" style=display:none>Trabajar de noche</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -80,7 +98,7 @@
       <button onclick="color()">Fondo Color Random</button>
       <button onclick="argh()">aaargh... basta de colores</button>
       <button title="todos los display en bloque y visibles, y las row estructurales se muestran con borde sólido" class="btn" onclick="modofacil()">activar modo fácil</button>
-      <button title="boton de trabajo alternativo o trabajo de noche" class="btn" onclick="trabajoDurisimo()">trabajoB</button>
+
       <button title="boton de trabajo calificado, aparece luego de estudiar" class="btn" onclick="trabajoCalificado()">TrabajoC</button>
     </div></div>
     <br>

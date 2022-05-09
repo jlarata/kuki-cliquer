@@ -119,6 +119,9 @@ function trabajoNoCalificado() {
 function trabajoDurisimo() {
   if (trabajandodobleturno == false) {
     trabajandodobleturno = true;
+    document.getElementById("cajasegundotrabajo").style.display="block";
+    document.getElementById("trabajoentregas").classList.add("onirico");
+    document.getElementById("textodelivery").classList.add("latente");
     dosmasporsegundo = setInterval(ganaDinero, 500, 1);
     }
   }
@@ -155,6 +158,23 @@ function esforzarseout() {
   document.getElementById("noPasaNada").classList.remove("evanescente");
   }
 
+function esforzarseMucho() {
+  horasextra = 1;
+  esfuerzo = esfuerzo + 1;
+  dinero = dinero + horasextra;
+/* Actualiza la billetera con singular dinero o plural dineros*/
+  if (dinero == 1 || dinero == 0 ) {
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
+    } else {
+    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
+    }
+/* hacer un if que al sumar suficiente "esfuerzo" haga visible el boton trabajoB*/
+  if (esfuerzo >= 20) {
+    document.getElementById("botontrabajoB").style.display="block";
+    }
+  };
+
+
 function desarrollo() {
   let passwd = String(prompt("contraseña!"))
   if (passwd=="ocho"){
@@ -175,6 +195,7 @@ function modofacil() {
   document.getElementById("smith").style.visibility="visible";
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
+  document.getElementById("botontrabajoB").style.display="block";
 
   let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
   let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));

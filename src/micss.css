@@ -220,9 +220,12 @@ alterna {
 .cajatrabajo {
   display: flex;
   justify-content: center;
-  height: 14vh;
-  min-height: 14vh;
+  /*height: 14vh;*/
+  }
 
+.cajatrabajo > img {
+  max-width: 14vh;
+  max-height: 14vh;
   }
 
 .row {
@@ -250,6 +253,17 @@ alterna {
   /*margin-top:
   margin-right:
   margin-left: */
+}
+
+.botoneratrabajo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  }
+
+.trabajosydias {
+  justify-content: flex-end;
 }
 
 .col {
