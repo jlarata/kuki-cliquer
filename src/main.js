@@ -9,6 +9,7 @@ var primerasinkukis=true;
 var trabajando=false;
 var esfuerzo=0;
 var trabajandodobleturno=false;
+var horasextra=1;
 
 function inicio(){
   if (dinero == 1 || dinero == 0) {
@@ -38,21 +39,12 @@ document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(ma
   var y = masuno.clientY - rect.top;  //y position within the element.
   document.getElementById("ganamasuno").style.marginLeft = x+"px";
 
-
-  /*PROBLEMAS ACTUALES:
-
-  el +1 queda dentro de la caja o medio random se sale
-  no logro meterle animacion al +1*/
-
-
-
   document.getElementById("ganamasuno").style.marginBottom = "2"*y+"px";
   document.getElementById("ganamasuno").classList.add("evanescente");
   document.getElementById("ganamasuno").style.visibility = "visible";
 
-
   animaganamasuno();
-
+  esforzarseMucho();
   }
 
 
@@ -119,7 +111,8 @@ if (dinero == 1 || dinero == 0 ) {
 
 } else {
 alert("No te queda más dinero. ¡Buenísimo!");
-document.getElementById("botonTrabajar").classList.add("aparecer2");
+document.getElementById("botonTrabajar").classList.add("aparecer3");
+document.getElementById("smith").classList.add("aparecer2");
 document.getElementById("smith").style.visibility="visible"
     }
   };
@@ -136,9 +129,11 @@ function trabajar() {
 function ganaDinero(salario) {
   dinero = dinero + salario;
 /* Hace visible el botón esforzarse cuando se sume una cantidad de dinero*/
-if (dinero >= 5) {
+if (dinero >= 5 && esfuerzo <= 6) {
+document.getElementById("cajabotonesforzarse").classList.add("aparecer2");
+document.getElementById("cajabotonesforzarse").style.display=null;
 document.getElementById("botonEsforzarse").classList.add("aparecer2");
-document.getElementById("botonEsforzarse").style.visibility="visible";
+document.getElementById("botonEsforzarse").style.display=null;
   }
 /* Actualiza la billetera con singular dinero o plural dineros*/
   if (dinero == 1 || dinero == 0 ) {
@@ -197,7 +192,6 @@ function esforzarseout() {
   }
 
 function esforzarseMucho() {
-  horasextra = 1;
   esfuerzo = esfuerzo + 1;
   dinero = dinero + horasextra;
 /* Actualiza la billetera con singular dinero o plural dineros*/
@@ -207,12 +201,19 @@ function esforzarseMucho() {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
     }
 /* hacer un if que al sumar suficiente "esfuerzo" haga visible el boton trabajoB*/
+
   if (esfuerzo >= 20) {
+    document.getElementById("cajabotonesforzarse").style.display="none";
+    document.getElementById("botonEsforzarse").style.display="none";
+    }
+
+  if (esfuerzo >= 30) {
+    document.getElementById("botontrabajoB").classList.add("atenti1");
     document.getElementById("botontrabajoB").style.display=null;
     }
   };
 
-/*function animaganamasuno() {
+function animaganamasuno() {
 
   document.getElementById("ganamasuno").style.visibility="visible";
   document.getElementById("ganamasuno").classList.add("evanescente");
@@ -223,7 +224,7 @@ function animaganamasunoout() {
   document.getElementById("ganamasuno").style.visibility="hidden";
   document.getElementById("ganamasuno").classList.remove("evanescente");
   }
-*/
+
 
 function desarrollo() {
   let passwd = String(prompt("contraseña!"))
@@ -242,6 +243,7 @@ function desarrollo() {
 function modofacil() {
   document.getElementById("cajaCompra").style.visibility="visible";
   document.getElementById("billetera").style.visibility="visible";
+  document.getElementById("smith").classList.add("aparecer2");
   document.getElementById("smith").style.visibility="visible";
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
@@ -252,7 +254,8 @@ function modofacil() {
   let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
   kukis = cuantasKukisQueres;
   dinero = cuantoDineroQueres;
-  document.getElementById("botonEsforzarse").style.visibility="visible";
+  document.getElementById("cajabotonesforzarse").style.display=null;
+  document.getElementById("botonEsforzarse").style.display=null;
   document.getElementById("botonEsforzarseMucho").style.visibility="visible";
   if (kukis == 1) {
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";

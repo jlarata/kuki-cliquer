@@ -51,13 +51,17 @@
                productivo.” (1776)</em><p/></div>
         <div class="botoneratrabajo">
             <div class="col-3">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
-            <div class="col-3" style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="visibility:hidden;">Esforzarse</button>
+
+            <!-- la caja con el botón de esforzarse y la caja posición absoluta con el msg "no pasa nada"-->
+            <div class="col-3" id=cajabotonesforzarse style="position:relative; display:none">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="display:none;">Esforzarse</button>
             <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
-            <div class="col-3">
-              <p id="ganamasuno" style=visibility:hidden>+1</p>
-              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button>
-            </div>
+
             <div class="col-3" id="botontrabajoB" style=display:none><button class="btn" onclick="trabajoDurisimo()">Trabajar doble turno</button></div>
+            <!-- la caja con el botón de esforzarse MUCHO-->
+            <div class="col-3" style="position:relative">
+              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button>
+              <p id="ganamasuno" style="position:absolute; top: -5%; visibility:hidden">+1</p>
+            </div>
         </div>
     </div>
   </div>
@@ -97,7 +101,7 @@
     </div>
   </div>
 
-  <div class="footer" id=footer>
+  <div class="footer" id=footer style="position:absolute; top:120%">
     <div><button title="contraseña string 8"  class=btn onclick="desarrollo()">desarrollo</button>
     </div>
     <div id=cajaPruebas style=visibility:hidden>asd</div>
