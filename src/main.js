@@ -232,10 +232,19 @@ function desarrollo() {
   document.getElementById("desarrollo").style.display="block";
   document.getElementById("footer").style.border="0.5px solid #000";
 
+/* poner borde a todos los elementos con la clase rowestructural*/
+
   var estructurales = document.querySelectorAll('.rowestructural');
   for(var i=0; i<estructurales.length; i++){
       estructurales[i].style.border = "0.5px solid #000";
       }
+
+/*sacar caja enceuno*/
+  var encompu = document.querySelectorAll('.enceluno');
+  for(var i=0; i<encompu.length; i++){
+      encompu[i].style.display="none";
+      }
+
 
   }
 }
@@ -248,6 +257,7 @@ function modofacil() {
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
   document.getElementById("botontrabajoB").style.display=null;
+  document.getElementById("cajasegundotrabajo").style.display=null;
 
 
   let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));

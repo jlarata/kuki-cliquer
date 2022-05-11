@@ -123,7 +123,56 @@ small, .small {
 
 ul { padding-left: 0; }
 
-alterna {
+.enceluno {
+  display: none;
+}
+
+@media only screen and (max-width:768px){
+.enceluno {
+  text-align: justify;
+  color: #fff;
+  font-family: monospace;
+  background-color: #212529;
+  border-radius: 0.3rem;
+  position: absolute;
+  top: 0%;
+  display: block;
+  width: 98%;
+  height: 110%;
+  }
+.enceluno > h1 {
+  padding: 5%;
+  }
+/* header{position:fixed;display:none;z-index:999;animation:none;bottom:0;height:100%}
+ #lead{position:relative;height:20vh;min-height:200px;max-height:70vh;background:url(../images/lead-bg.jpg);background-size:100%; background-repeat:no-repeat;padding:15px;overflow:hidden}
+ #lead-content h1{font-size:2em}
+ #lead-content h2{font-size:1.3em}
+ #lead-content a{padding:10px 20px}
+ #lead-down{display:none;}*/}
+
+@media only screen and (max-width: 480px){
+  .enceluno {
+    text-align: justify;
+    color: #fff;
+    font-family: monospace;
+    background-color: #212529;
+    border-radius: 0.3rem;
+    position: absolute;
+    top: 0%;
+    display: block;
+    width: 98%;
+    height: 110%;
+  }
+  .enceluno > h1 {
+    padding: 5%;
+  }
+/* #lead{position:relative;height:20vh;min-height:20vh;max-height:70vh;background:url(../images/lead-bg.jpg);background-size:100%; background-repeat:no-repeat;padding:15px;overflow:hidden}
+ #lead-content h1{font-size:1.5em}
+ #lead-content h2{font-size:1em}
+ #lead-content a{font-size:0.9em;padding:5px 10px}
+#lead-down{display:none;}*/}
+
+.alter {
     padding: 1%;
     color: #fff;
     font-family: monospace;
@@ -449,6 +498,11 @@ alterna {
 .aparecer4 {
   animation-name: transicion2;
   animation-duration: 6s;
+  }
+
+.aparecer5 {
+  animation-name: transicion2;
+  animation-duration: 14s;
   }
 
 .onirico {
