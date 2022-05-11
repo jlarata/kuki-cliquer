@@ -141,7 +141,8 @@ ul { padding-left: 0; }
   height: 110%;
   }
 .enceluno > h1 {
-  padding: 5%;
+  padding: 0.1% 5%;
+  font-size: 1.5em;
   }
 /* header{position:fixed;display:none;z-index:999;animation:none;bottom:0;height:100%}
  #lead{position:relative;height:20vh;min-height:200px;max-height:70vh;background:url(../images/lead-bg.jpg);background-size:100%; background-repeat:no-repeat;padding:15px;overflow:hidden}
@@ -164,7 +165,8 @@ ul { padding-left: 0; }
     height: 110%;
   }
   .enceluno > h1 {
-    padding: 5%;
+    padding: 0.1% 5%;
+    font-size: 1.5em;
   }
 /* #lead{position:relative;height:20vh;min-height:20vh;max-height:70vh;background:url(../images/lead-bg.jpg);background-size:100%; background-repeat:no-repeat;padding:15px;overflow:hidden}
  #lead-content h1{font-size:1.5em}
