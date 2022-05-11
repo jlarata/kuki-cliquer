@@ -76,7 +76,7 @@ function comerKuki() {
       primerasinkukis = false;
       alert("No te quedan Kukis. ¡Bien!")
       alert("¿deberías comprar más?")
-      document.getElementById("cajaCompra").style.visibility="visible";
+      document.getElementById("botonCompra").style.visibility="visible";
       document.getElementById("botonCompra").classList.add("aparecer1");
     } else {
       alert("No te quedan Kukis. ¡Bien!")
@@ -130,9 +130,9 @@ function ganaDinero(salario) {
   dinero = dinero + salario;
 /* Hace visible el botón esforzarse cuando se sume una cantidad de dinero*/
 if (dinero >= 5 && esfuerzo <= 6) {
-document.getElementById("cajabotonesforzarse").classList.add("aparecer2");
+document.getElementById("cajabotonesforzarse").classList.add("aparecer1");
 document.getElementById("cajabotonesforzarse").style.display=null;
-document.getElementById("botonEsforzarse").classList.add("aparecer2");
+document.getElementById("botonEsforzarse").classList.add("aparecer1");
 document.getElementById("botonEsforzarse").style.display=null;
   }
 /* Actualiza la billetera con singular dinero o plural dineros*/
@@ -208,8 +208,9 @@ function esforzarseMucho() {
     }
 
   if (esfuerzo >= 30) {
-    document.getElementById("botontrabajoB").classList.add("atenti1");
+    document.getElementById("cajatrabajoB").style.display=null;
     document.getElementById("botontrabajoB").style.display=null;
+    document.getElementById("botontrabajoB").classList.add("atenti1");
     }
   };
 
@@ -250,14 +251,17 @@ function desarrollo() {
 }
 
 function modofacil() {
-  document.getElementById("cajaCompra").style.visibility="visible";
+  document.getElementById("botonCompra").style.visibility="visible";
   document.getElementById("billetera").style.visibility="visible";
   document.getElementById("smith").classList.add("aparecer2");
   document.getElementById("smith").style.visibility="visible";
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
+  document.getElementById("cajatrabajoB").style.display=null;
   document.getElementById("botontrabajoB").style.display=null;
   document.getElementById("cajasegundotrabajo").style.display=null;
+  document.getElementById("comprarcantidad").style.display=null;
+  document.getElementById("comercantidad").style.display=null;
 
 
   let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));

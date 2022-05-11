@@ -29,11 +29,15 @@
     <div class="col-3 aparecer2 generalc"><ul style="list-style-type:none;">
     <li><h5>Tenés <span id="cuantasKukis"></span>.</h5></li>
     <li><br></li>
-    <li><button class="btn aparecer3" onclick="comerKuki()">Comer Kuki</button></li>
+    <li>
+      <button class="btn aparecer3" onclick="comerKuki()">Comer Kuki</button>
+      <input type="number" class="form-control" id="comercantidad" placeholder="¿cuantas?" style=display:none>
+    </li>
     <li class="aparecer4"><br><hr><br></li>
-    <li><div id="cajaCompra" class="container" style= visibility:hidden>
-    <button  id="botonCompra" class="btn" onclick="comprarKuki()">Conseguir Kuki</button>
-    </div></li>
+    <li>
+      <input type="number" class="form-control" id="comprarcantidad" placeholder="¿cuantas?" style=display:none>
+      <button  id="botonCompra" class="btn" onclick="comprarKuki()" style=visibility:hidden>Conseguir Kuki</button>
+    <!--</div>--></li>
     </ul>
     </div>
 
@@ -57,7 +61,9 @@
             <div class="col-3" id=cajabotonesforzarse style="position:relative; display:none">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="display:none;">Esforzarse</button>
             <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
 
-            <div class="col-3" id="botontrabajoB" style=display:none><button class="btn" onclick="trabajoDurisimo()">Trabajar doble turno</button></div>
+            <!-- la caja con el botón de trabajo alternativo-->
+
+            <div class="col-3" id="cajatrabajoB" style=display:none><button class="btn" id="botontrabajoB" style=display:none onclick="trabajoDurisimo()">Trabajar doble turno</button></div>
             <!-- la caja con el botón de esforzarse MUCHO-->
             <div class="col-3" style="position:relative">
               <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button>
@@ -123,7 +129,7 @@
   <h1 class=aparecer5>It seems you are trying to play my kuki cliquer on a cellphone</h1>
   <h1>playing games in cellphones is dangerous </h1>
   <h1 class=aparecer5>you lose introspection, selfawareness, class conscience.</h1>
-  <h1 class=aparecer4>since you already have your cellphone at hand, please call yout grandparents,
+  <h1 class=aparecer4>since you already have your cellphone at hand, please call your grandparents,
      if you are lucky enough to have them</h1>
   <h1><div class=aparecer5>then, if you are still willing</div>, open this kuki cliquer on a computer</h1>
 </div>
