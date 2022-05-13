@@ -11,7 +11,14 @@ var esfuerzo=0;
 var trabajandodobleturno=false;
 var horasextra=1;
 
+
+
+
 function inicio(){
+
+/* bloque ACTUALIZA. actualiza la visualización de la billetera y  el contador
+ de kukis, prestando atención a singulares y plurales. */
+
   if (dinero == 1 || dinero == 0) {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
     } else {
@@ -23,6 +30,10 @@ function inicio(){
   document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
 }
 
+/* función que devuelve ubicación del mouse dentro de un elemento. así como está
+lo habiita dentro del footer en inicio, pero se puede meter dentro de una función
+activable */
+
 document.getElementById('footer').onclick = function clickEvent(cartelspam) {
       var rect = cartelspam.target.getBoundingClientRect();
       var x = cartelspam.clientX - rect.left; //x position within the element.
@@ -32,6 +43,10 @@ document.getElementById('footer').onclick = function clickEvent(cartelspam) {
       document.getElementById("cajaPruebas").style.marginTop = y+"px";
       document.getElementById("cajaPruebas").style.visibility = "visible";
     }
+
+/* misma función, ahora dentro del botón esforzarse mucho para que aparezca el
+cartelito +1 y se anime donde esté el mouse. ¿es más prolijo pner esto oninit o
+dentro de una función activable? */
 
 document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(masuno) {
   var rect = masuno.target.getBoundingClientRect();
@@ -59,6 +74,9 @@ function comerKuki() {
       primeracomida = false;
       kukis = kukis -1;
       alert("Te comiste una Kuki. ¡Bien hecho!");
+
+/* bloque ACTUALIZA */
+
       if (kukis == 1) {
         document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
         } else {
@@ -74,17 +92,19 @@ function comerKuki() {
         }
     } else if (primerasinkukis == true) {
       primerasinkukis = false;
-      alert("No te quedan Kukis. ¡Bien!")
-      alert("¿deberías comprar más?")
+      alert("No te quedan Kukis. ¡Deberías conseguir más!")
+/* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
       document.getElementById("botonCompra").classList.add("aparecer1");
     } else {
       alert("No te quedan Kukis. ¡Bien!")
-      /*document.write("No te quedan Kukis. ¡Bien!");*/
-    }
+      }
 };
 
 function comprarKuki() {
+
+  /* la primera vez: aviso de que gastarás dinero, visualización de billetera,
+  modificación del texto del botón de CONSEGUIR a comprar. ¿conciencia +1? */
   if (fer == 2) {
   fer = 3;
   alert("comprar cuesta dineros")
@@ -93,32 +113,62 @@ function comprarKuki() {
   document.getElementById("billetera").style.visibility="visible";
   document.getElementById("billetera").classList.add("aparecer1");
   } else {
-  if (dinero >=1) {
-  dinero = dinero -1
-  kukis = kukis +1;
 
-  if (kukis == 1) {
-  document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-} else {
-  document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-}
+  /* crea una variable con el input de compra */
+    var comprarcuantas = document.getElementById("comprarcantidad").value;
 
-if (dinero == 1 || dinero == 0 ) {
-  document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
-  } else {
-  document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-  }
+/* no se puede comprar si se tiene menos de 1 dinero (no se chequea contra
+comprarcantidad porque su value por defecto es 0) */
 
-} else {
-alert("No te queda más dinero. ¡Buenísimo!");
-document.getElementById("botonTrabajar").classList.add("aparecer3");
-document.getElementById("smith").classList.add("aparecer2");
-document.getElementById("smith").style.visibility="visible"
-    }
-  };
-}
+    if (dinero >= 1) {
+
+/* chequea el display del input de compra. si es none compra de a 1, sino, lo usa */
+      if (document.getElementById("comprarcantidad").style.display=="none") {
+          dinero = dinero -1;
+          kukis = +kukis +1;
+        } else if (dinero >= comprarcuantas) {
+            dinero = dinero -comprarcuantas;
+            kukis = +kukis + +comprarcuantas;
+            } else {
+            alert("Estás queriendo comprar más de lo que te alcanza con tus dineros");
+            }
+
+          if (kukis == 1) {
+          document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
+          } else {
+          document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
+          }
+
+          if (dinero == 1 || dinero == 0 ) {
+          document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
+          } else {
+          document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
+          }
+        } else {
+
+          /* habiita caja citas, primer trabajo y comer y comprar cantidad*/
+
+          alert("No te queda más dinero. ¡Buenísimo!");
+          document.getElementById("botonTrabajar").classList.add("aparecer3");
+          document.getElementById("smith").classList.add("aparecer2");
+          document.getElementById("smith").style.visibility="visible"
+          document.getElementById("comprarcantidad").style.display=null;
+          document.getElementById("comercantidad").style.display=null;
+          tiempocaja = setTimeout(abrircajas, 0001);
+           function abrircajas() {
+             document.getElementById("comprarcantidad").style.width="50%";
+             document.getElementById("comercantidad").style.width="60%";
+         }
+          }
+        };
+      }
 
 function trabajar() {
+/* activa las animaciones y dispara la función trabajonocalificado que,
+a su vez, activa ganardinero() con valor 2 y un setinterval
+
+luego de presionado, este botón está al pedo. ¿hacerlo desaparecer? ¿achicarse? */
+
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
   document.getElementById("trabajomuyduro").classList.add("onirico");
@@ -135,7 +185,7 @@ document.getElementById("cajabotonesforzarse").style.display=null;
 document.getElementById("botonEsforzarse").classList.add("aparecer1");
 document.getElementById("botonEsforzarse").style.display=null;
   }
-/* Actualiza la billetera con singular dinero o plural dineros*/
+/* caja ACTUAIZA */
   if (dinero == 1 || dinero == 0 ) {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
     } else {
@@ -143,11 +193,16 @@ document.getElementById("botonEsforzarse").style.display=null;
     }
   };
 
+/* primer trabajo */
+
 function trabajoNoCalificado() {
   if (trabajando == false) {
-      trabajando = true;      dosporsegundo = setInterval(ganaDinero, 1000, 2);
+      trabajando = true;
+      dosporsegundo = setInterval(ganaDinero, 1000, 2);
     }
   }
+
+/* segundo trabajo */
 
 function trabajoDurisimo() {
   if (trabajandodobleturno == false) {
@@ -159,6 +214,9 @@ function trabajoDurisimo() {
     }
   }
 
+/* NO IMPLEMENTADO. la idea es que frene un trabajo en curso y dispare
+la función ganardinero con otro setinterval y otro valor */
+
 function trabajoCalificado() {
   clearInterval(dosporsegundo);
   clearInterval(dosmasporsegundo);
@@ -166,16 +224,11 @@ function trabajoCalificado() {
   trabajandodobleturno = false;
   }
 
+/* esforzarse no cambia nada. ¿conciencia +1? sumado suficiente esfuerzo
+(¿debería ser conciencia?) aparece a opción de esforzarse _mucho_ y desaparece
+ la opción esforzarse.  */
 
 function esforzarse() {
-
-  /* Aquí podría hacer una segunda clase-animacion un poquito más a la derecha
-  y una variable que se active y desactive para que cada click active una u otra
-  eso daría probablemente más dinamismo al "no pasa nada" */
-
-  /* alternativamente hacer una funcion que incluya una llamada al lugar en que
-   está el mouse al momento de hacer click y que la animación surja ahí. eso por
-   cierto elimina toda la molestia del div position absolute*/
 
   esfuerzo = esfuerzo + 1;
   document.getElementById("noPasaNada").style.visibility="visible";
@@ -191,16 +244,19 @@ function esforzarseout() {
   document.getElementById("noPasaNada").classList.remove("evanescente");
   }
 
+/*  suma un dinero por click y eventualmente da display a la caja de trabajo B.
+ nótese que la animación +1 no se dispara desde dentro de esta función sino que ya está en el onInit */
+
 function esforzarseMucho() {
   esfuerzo = esfuerzo + 1;
   dinero = dinero + horasextra;
-/* Actualiza la billetera con singular dinero o plural dineros*/
+/* caja ACTUALIZA */
   if (dinero == 1 || dinero == 0 ) {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
     } else {
     document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
     }
-/* hacer un if que al sumar suficiente "esfuerzo" haga visible el boton trabajoB*/
+/* sumada suficiente variable esfuerzo, aparece el botón de esforzarse _mucho_ */
 
   if (esfuerzo >= 20) {
     document.getElementById("cajabotonesforzarse").style.display="none";
@@ -227,11 +283,26 @@ function animaganamasunoout() {
   }
 
 
+
+/* habilita los cheats. */
+
 function desarrollo() {
   let passwd = String(prompt("contraseña!"))
   if (passwd=="ocho"){
   document.getElementById("desarrollo").style.display="block";
   document.getElementById("footer").style.border="0.5px solid #000";
+
+
+/* por algún motivo la animación con transición de las cajas de compra no
+ funcionaron hasta que tuvieron un mínimo delay que provee el settimeout*/
+
+  document.getElementById("comprarcantidad").style.display=null;
+  document.getElementById("comercantidad").style.display=null;
+  tiempocaja = setTimeout(abrircajas, 0001);
+   function abrircajas() {
+     document.getElementById("comprarcantidad").style.width="50%";
+     document.getElementById("comercantidad").style.width="60%";
+ }
 
 /* poner borde a todos los elementos con la clase rowestructural*/
 
@@ -251,6 +322,12 @@ function desarrollo() {
 }
 
 function modofacil() {
+
+  let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
+  let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
+  kukis = cuantasKukisQueres;
+  dinero = cuantoDineroQueres;
+
   document.getElementById("botonCompra").style.visibility="visible";
   document.getElementById("billetera").style.visibility="visible";
   document.getElementById("smith").classList.add("aparecer2");
@@ -260,15 +337,7 @@ function modofacil() {
   document.getElementById("cajatrabajoB").style.display=null;
   document.getElementById("botontrabajoB").style.display=null;
   document.getElementById("cajasegundotrabajo").style.display=null;
-  document.getElementById("comprarcantidad").style.display=null;
-  document.getElementById("comercantidad").style.display=null;
-
-
-  let cuantasKukisQueres = Number(prompt("cuántas kukis querés tener?"));
-  let cuantoDineroQueres = Number(prompt("y cuánta guita, maestrx?"));
-  kukis = cuantasKukisQueres;
-  dinero = cuantoDineroQueres;
-  document.getElementById("cajabotonesforzarse").style.display=null;
+    document.getElementById("cajabotonesforzarse").style.display=null;
   document.getElementById("botonEsforzarse").style.display=null;
   document.getElementById("botonEsforzarseMucho").style.visibility="visible";
   if (kukis == 1) {
@@ -298,20 +367,3 @@ function color(){
 function argh() {
   document.body.style.background = "#ffffff"
   };
-
-
-/* LA FUNCIÓN DE BALLESTO let Numero = Number(prompt("Te comiste una Kuki"))
-if (!Number.isNaN(Numero) && Numero != "") {
-    alert("Bien")
-} else {
-    alert("Dale pelotudo")
-    alert("Bueno, vamos de nuevo")
-    let Letra =  prompt("Is this the real life?")
-    if (Letra.toLowerCase() == "is this just fantasy?") {
-        alert("Ta, te perdono")
-    } else {
-        alert("Cancelado")
-        document.write("CANCELAAAAAAAADO")
-    }
-}
-*/

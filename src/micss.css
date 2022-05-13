@@ -3,7 +3,7 @@
 
 
 #botonCompra {
-  float: right;
+  /*float: right;*/
   /*height: 5vh;
   width: 20vh;*/
 }
@@ -131,6 +131,23 @@ li {
   vertical-align: middle;
   }
 
+.linealinea {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.linealineab {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.estable {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .enceluno {
   display: none;
 }
@@ -253,12 +270,6 @@ li {
 .btn > invi {
     color:#f1f1f1;
   }
-
-.estable {
-  margin-left: 2%;
-  margin-right: 2%;
-  max-width: 60%;
-}
 
 .chico {
   display:grid;
@@ -485,6 +496,24 @@ li {
   100 {color:black; background-color: #f1f1f1; font-size: 100%;}
   }
 
+
+#comprarcantidad {
+  width: 20%;
+  transition: width 4s;
+}
+
+#comprarcantidad:hover {
+  width: 60%;
+}
+
+#comercantidad {
+  width: 20%;
+  transition: width 4s;
+}
+
+#comercantidad:hover {
+  width: 60%;
+}
 
 
 .atenti1 {

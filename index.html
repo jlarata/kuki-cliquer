@@ -21,7 +21,8 @@
 <div class="especial">
 
 <div class=container>
-<div class="header aparecer1"><h1>el kuki cliquer</h1></div></div>
+  <div class="header aparecer1"><h1>el kuki cliquer</h1></div>
+</div>
 
 <div class="container rowestructural">
 
@@ -29,13 +30,13 @@
     <div class="col-3 aparecer2 generalc"><ul style="list-style-type:none;">
     <li><h5>Tenés <span id="cuantasKukis"></span>.</h5></li>
     <li><br></li>
-    <li>
+    <li class=linealinea>
       <button class="btn aparecer3" onclick="comerKuki()">Comer Kuki</button>
-      <input type="number" class="form-control" id="comercantidad" placeholder="¿cuantas?" style=display:none>
+      <input type="number" min="0" oninput="validity.valid||(value='')" id="comercantidad" placeholder="¿cuantas?" class="estable"  style=display:none>
     </li>
     <li class="aparecer4"><br><hr><br></li>
-    <li>
-      <input type="number" class="form-control" id="comprarcantidad" placeholder="¿cuantas?" style=display:none>
+    <li class=linealineab>
+      <input type="number" min="0" oninput="validity.valid||(value='')" id="comprarcantidad" placeholder="¿cuántas?" class="estable" style=display:none>
       <button  id="botonCompra" class="btn" onclick="comprarKuki()" style=visibility:hidden>Conseguir Kuki</button>
     <!--</div>--></li>
     </ul>
@@ -110,7 +111,7 @@
   </div>
 
   <div class="footer" id=footer style="position:absolute; top:120%">
-    <div><button title="contraseña string 8"  class=btn onclick="desarrollo()">desarrollo</button>
+    <div><button title="contraseña string 8"  class=btn onclick="desarrollo()">cheats</button>
     </div>
     <div id=cajaPruebas style=visibility:hidden>asd</div>
 
@@ -126,12 +127,12 @@
 </div>
 
 <div class=enceluno>
-  <h1 class=aparecer5>It seems you are trying to play my kuki cliquer on a cellphone</h1>
-  <h1>playing games in cellphones is dangerous </h1>
+  <h1 class=aparecer5>It seems you are trying to play kuki cliquer on a phone</h1>
+  <h1>playing games in phones is dangerous </h1>
   <h1 class=aparecer5>you lose introspection, selfawareness, class conscience.</h1>
-  <h1 class=aparecer4>since you already have your cellphone at hand, please call your grandparents,
-     if you are lucky enough to have them</h1>
-  <h1><div class=aparecer5>then, if you are still willing</div>, open this kuki cliquer on a computer</h1>
+  <h1 class=aparecer4>since already have your phone at hand, please call your grandparents,
+     if you have that privilege</h1>
+  <h1><div class=aparecer5>then, if still willing</div>, open kuki cliquer on a computer. thank you kindly.</h1>
 </div>
 
 <script src="src/main.js"></script>
