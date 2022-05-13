@@ -74,16 +74,28 @@ function comerKuki() {
       primeracomida = false;
       kukis = kukis -1;
       alert("Te comiste una Kuki. ¡Bien hecho!");
-
 /* bloque ACTUALIZA */
-
       if (kukis == 1) {
         document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
         } else {
         document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
         }
+
+
       } else {
-        kukis = kukis -1;
+
+        /* crea una variable con el input de compra */
+        var comercuantas = document.getElementById("comercantidad").value;
+
+        /* chequea el display del input de comer. si es none compra de a 1, sino, lo usa */
+              if (document.getElementById("comercantidad").style.display=="none") {
+                  kukis = kukis -1;
+                } else if (kukis >= comercuantas) {
+                    kukis = +kukis -comercuantas;
+                    } else {
+                    alert("Estás queriendo comer más kukis de las que tenés");
+                    }
+
         if (kukis == 1) {
           document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
           } else {
@@ -114,7 +126,7 @@ function comprarKuki() {
   document.getElementById("billetera").classList.add("aparecer1");
   } else {
 
-  /* crea una variable con el input de compra */
+/* crea una variable con el input de compra */
     var comprarcuantas = document.getElementById("comprarcantidad").value;
 
 /* no se puede comprar si se tiene menos de 1 dinero (no se chequea contra
