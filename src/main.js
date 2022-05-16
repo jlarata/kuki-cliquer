@@ -62,10 +62,21 @@ document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(ma
   esforzarseMucho();
   }
 
-
 };
 
 
+function cartelinfonoche() {
+  document.getElementById('cajanoche').style.display="block";
+  document.getElementById('cajanoche').style.visibility="visible";
+  document.getElementById('cajanoche').style.opacity=1;
+}
+
+function cartelinfonocheout() {
+  document.getElementById('cajanoche').style.opacity=0;
+  document.getElementById('cajanoche').style.visibility="hidden";
+  document.getElementById('cajanoche').style.display="none";
+
+}
 
 
 function comerKuki() {
@@ -226,10 +237,11 @@ function trabajoDurisimo() {
     for(var i=0; i<cosc.length; i++){
         cosc[i].style.background= "#B8B8BC"
         }
-    document.getElementById("textotrabajomuyduro").style.color="#000";
-    document.getElementById("textodelivery").style.color="#000";
+    document.getElementById("textotrabajomuyduro").style.color="8E8A8D";
+    document.getElementById("textodelivery").style.color="8E8A8D";
     document.getElementById("comercantidad").style.background="#B8B8BC";
     document.getElementById("comprarcantidad").style.background="#B8B8BC";
+    document.getElementById("body").classList.add("noche");
 
     /*resto de la función*/
 
