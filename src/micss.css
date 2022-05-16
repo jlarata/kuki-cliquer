@@ -1,6 +1,23 @@
 @charset "UTF-8";
 
+@font-face {
+  /* https://www.dafont.com/es/dogica.font
+  licensed under the SIL Open Font License, Version 1.1. */
+  font-family: dogica;
+  src: url(../src/fnt/dogica.ttf);
+}
 
+@font-face {
+  font-family: dogicapixel;
+  src: url(../src/fnt/dogicapixel.ttf);
+}
+
+@font-face {
+  font-family: dogicapixelbold;
+  src: url(../src/fnt/dogicapixelbold.ttf);
+}
+
+#body {}
 
 #botonCompra {
   /*float: right;*/
@@ -75,8 +92,9 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
+
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: 2.5rem;
   }
 
 h2, .h2 {
@@ -141,6 +159,19 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+}
+
+.dogica {
+  font-family: dogica;
+}
+
+.dogicap {
+  font-family: dogicapixel;
+
+}
+
+.dogicapb {
+  font-family: dogicapixelbold;
 }
 
 .estable {
@@ -496,6 +527,12 @@ li {
   100 {color:black; background-color: #f1f1f1; font-size: 100%;}
   }
 
+@keyframes denocheadia {
+  0% {color:#FFFFFF; background-color: #223785;}
+  75% 0% {color:#FFFFFF;}
+  100% {color:black; background-color: #3757CB;}
+  }
+
 
 #comprarcantidad {
   width: 20%;
@@ -566,6 +603,12 @@ li {
   animation-name: transicion5;
   width: 150%;
   animation-duration: 0.5s;
+}
+
+.amanecer {
+  animation-name: denocheadia;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 /**,

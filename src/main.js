@@ -219,12 +219,28 @@ function trabajoNoCalificado() {
 function trabajoDurisimo() {
   if (trabajandodobleturno == false) {
     trabajandodobleturno = true;
+    document.getElementById("body").classList.add("amanecer");
+
+    /*página modo noche*/
+    var cosc = document.querySelectorAll('.btn');
+    for(var i=0; i<cosc.length; i++){
+        cosc[i].style.background= "#B8B8BC"
+        }
+    document.getElementById("textotrabajomuyduro").style.color="#000";
+    document.getElementById("textodelivery").style.color="#000";
+    document.getElementById("comercantidad").style.background="#B8B8BC";
+    document.getElementById("comprarcantidad").style.background="#B8B8BC";
+
+    /*resto de la función*/
+
     document.getElementById("cajasegundotrabajo").style.display="block";
     document.getElementById("trabajoentregas").classList.add("onirico");
     document.getElementById("textodelivery").classList.add("latente");
     dosmasporsegundo = setInterval(ganaDinero, 500, 1);
     }
   }
+
+
 
 /* NO IMPLEMENTADO. la idea es que frene un trabajo en curso y dispare
 la función ganardinero con otro setinterval y otro valor */
