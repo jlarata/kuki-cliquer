@@ -68,16 +68,20 @@ document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(ma
 function cartelinfonoche() {
   document.getElementById('cajanoche').style.display="block";
   document.getElementById('cajanoche').style.visibility="visible";
+  tiempitoB = setTimeout(abrircaja, 100);
+   function abrircaja() {
   document.getElementById('cajanoche').style.opacity=1;
+  }
 }
 
 function cartelinfonocheout() {
   document.getElementById('cajanoche').style.opacity=0;
-  document.getElementById('cajanoche').style.visibility="hidden";
-  document.getElementById('cajanoche').style.display="none";
-
+  tiempitoA = setTimeout(cerrarcaja, 1500);
+   function cerrarcaja() {
+     document.getElementById('cajanoche').style.visibility="hidden";
+     document.getElementById('cajanoche').style.display="none";
+   }
 }
-
 
 function comerKuki() {
   if (kukis >=1) {
@@ -405,5 +409,9 @@ function color(){
   };
 
 function argh() {
-  document.body.style.background = "#ffffff"
+
+document.body.style.background = "#ffffff"
+
+
+
   };

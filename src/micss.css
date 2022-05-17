@@ -195,7 +195,7 @@ li {
   margin-top: 0.5%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s;
+  transition: opacity 1.5s;
   }
 
 .x {
@@ -376,7 +376,7 @@ li {
   flex: 0 0 auto;
   width: 100%;
   padding: 2em 0em 4em 2em;
-  }
+}
 
 .footer {
   height: 10vh;
@@ -560,7 +560,7 @@ li {
 
 @keyframes denocheadia {
   0% {color:#FFFFFF; background-color: #223785;}
-  75% 0% {color:#FFFFFF;}
+  75% {color:#FFFFFF;}
   100% {color:#8E8A8D; background-color: #1A2961;}
   }
 
