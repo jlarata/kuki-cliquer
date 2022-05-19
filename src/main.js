@@ -2,7 +2,7 @@
 
 
 var kukis=1;
-var dinero=10;
+var dinero=3;
 var fer=2;
 var primeracomida=true;
 var primerasinkukis=true;
@@ -11,56 +11,16 @@ var esfuerzo=0;
 var trabajandodobleturno=false;
 var horasextra=1;
 
-
-
+const cuantoDinero=document.getElementById("cuantoDinero");
+const cuantasKukis=document.getElementById("cuantasKukis");
 
 function inicio(){
 
 /* bloque ACTUALIZA. actualiza la visualización de la billetera y  el contador
  de kukis, prestando atención a singulares y plurales. */
 
-  if (dinero == 1 || dinero == 0) {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
-    } else {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-  }
-  if (kukis == 1) {
-  document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-} else {
-  document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-}
-
-/* función que devuelve ubicación del mouse dentro de un elemento. así como está
-lo habiita dentro del footer en inicio, pero se puede meter dentro de una función
-activable */
-
-document.getElementById('footer').onclick = function clickEvent(cartelspam) {
-      var rect = cartelspam.target.getBoundingClientRect();
-      var x = cartelspam.clientX - rect.left; //x position within the element.
-      var y = cartelspam.clientY - rect.top;  //y position within the element.
-
-      document.getElementById("cajaPruebas").style.marginLeft = x+"px";
-      document.getElementById("cajaPruebas").style.marginTop = y+"px";
-      document.getElementById("cajaPruebas").style.visibility = "visible";
-    }
-
-/* misma función, ahora dentro del botón esforzarse mucho para que aparezca el
-cartelito +1 y se anime donde esté el mouse. ¿es más prolijo pner esto oninit o
-dentro de una función activable? */
-
-document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(masuno) {
-  var rect = masuno.target.getBoundingClientRect();
-  var x = masuno.clientX - rect.left; //x position within the element.
-  var y = masuno.clientY - rect.top;  //y position within the element.
-  document.getElementById("ganamasuno").style.marginLeft = x+"px";
-
-  document.getElementById("ganamasuno").style.marginBottom = "2"*y+"px";
-  document.getElementById("ganamasuno").classList.add("evanescente");
-  document.getElementById("ganamasuno").style.visibility = "visible";
-
-  animaganamasuno();
-  esforzarseMucho();
-  }
+actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
+actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
 
 };
 
@@ -89,13 +49,8 @@ function comerKuki() {
       primeracomida = false;
       kukis = kukis -1;
       alert("Te comiste una Kuki. ¡Bien hecho!");
-/* bloque ACTUALIZA */
-      if (kukis == 1) {
-        document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-        } else {
-        document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-        }
 
+actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
 
       } else {
 
@@ -110,12 +65,8 @@ function comerKuki() {
                     } else {
                     alert("Estás queriendo comer más kukis de las que tenés");
                     }
+      actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
 
-        if (kukis == 1) {
-          document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-          } else {
-            document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-          }
         }
     } else if (primerasinkukis == true) {
       primerasinkukis = false;
@@ -160,17 +111,9 @@ comprarcantidad porque su value por defecto es 0) */
             alert("Estás queriendo comprar más de lo que te alcanza con tus dineros");
             }
 
-          if (kukis == 1) {
-          document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-          } else {
-          document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-          }
+            actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
+            actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
 
-          if (dinero == 1 || dinero == 0 ) {
-          document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
-          } else {
-          document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-          }
         } else {
 
           /* habiita caja citas, primer trabajo y comer y comprar cantidad*/
@@ -193,7 +136,6 @@ comprarcantidad porque su value por defecto es 0) */
 function trabajar() {
 /* activa las animaciones y dispara la función trabajonocalificado que,
 a su vez, activa ganardinero() con valor 2 y un setinterval
-
 luego de presionado, este botón está al pedo. ¿hacerlo desaparecer? ¿achicarse? */
 
   document.getElementById("trabajomuyduro").style.display="block";
@@ -213,12 +155,7 @@ document.getElementById("botonEsforzarse").classList.add("aparecer1");
 document.getElementById("botonEsforzarse").style.display=null;
   }
 /* caja ACTUAIZA */
-  if (dinero == 1 || dinero == 0 ) {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
-    } else {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-    }
-  };
+actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
 
 /* primer trabajo */
 
@@ -292,41 +229,59 @@ function esforzarseout() {
  nótese que la animación +1 no se dispara desde dentro de esta función sino que ya está en el onInit */
 
 function esforzarseMucho() {
-  esfuerzo = esfuerzo + 1;
-  dinero = dinero + horasextra;
-/* caja ACTUALIZA */
-  if (dinero == 1 || dinero == 0 ) {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
-    } else {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-    }
-/* sumada suficiente variable esfuerzo, aparece el botón de esforzarse _mucho_ */
+
+
+/*  dentro del botón esforzarse mucho aparece el"+12 y se anima donde esté el
+ mouse onclick. ¿es más prolijo pner esto oninit o dentro de una función activable? */
+
+  document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(masuno) {
+
+    esfuerzo = esfuerzo + 1;
+    dinero = dinero + horasextra;
+  /* caja ACTUALIZA */
+
+  actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
+
+
+    var rect = masuno.target.getBoundingClientRect();
+    var x = masuno.clientX - rect.left; //x position within the element.
+    var y = masuno.clientY - rect.top;  //y position within the element.
+    document.getElementById("ganamasuno").style.marginLeft = x+"px";
+    document.getElementById("ganamasuno").style.marginBottom = "2"*y+"px";
+    document.getElementById("ganamasuno").classList.add("evanescente");
+    document.getElementById("ganamasuno").style.visibility = "visible";
+    const timeOutmasuno = setTimeout(animaganamasunoout, 250);
+
+/* sumada suficiente variable esfuerzo, desaparece el botón de esforzarse y luego
+aparece el de trabajar de noche */
 
   if (esfuerzo >= 20) {
     document.getElementById("cajabotonesforzarse").style.display="none";
     document.getElementById("botonEsforzarse").style.display="none";
     }
-
   if (esfuerzo >= 30) {
     document.getElementById("cajatrabajoB").style.display=null;
     document.getElementById("botontrabajoB").style.display=null;
     document.getElementById("botontrabajoB").classList.add("atenti1");
-    }
+      }
   };
 
-function animaganamasuno() {
-
-  document.getElementById("ganamasuno").style.visibility="visible";
-  document.getElementById("ganamasuno").classList.add("evanescente");
-  const timeOutmasuno = setTimeout(animaganamasunoout, 500);
-    }
+}
 
 function animaganamasunoout() {
-  document.getElementById("ganamasuno").style.visibility="hidden";
   document.getElementById("ganamasuno").classList.remove("evanescente");
+  document.getElementById("ganamasuno").style.visibility="hidden";
   }
 
 
+/* actualiza las cajas de kukis y dinero cambiando el texto según el numero sea
+singular o plural */
+
+function actualizarConPluralOSingular(domElement, numberVariable, word) {
+  numberVariable < 2
+  ? domElement.innerHTML = numberVariable + ` ${word}`
+  : domElement.innerHTML = numberVariable + ` ${word}s`;
+}
 
 /* habilita los cheats. */
 
@@ -384,16 +339,8 @@ function modofacil() {
     document.getElementById("cajabotonesforzarse").style.display=null;
   document.getElementById("botonEsforzarse").style.display=null;
   document.getElementById("botonEsforzarseMucho").style.visibility="visible";
-  if (kukis == 1) {
-  document.getElementById("cuantasKukis").innerHTML=kukis + " Kuki";
-    } else {
-  document.getElementById("cuantasKukis").innerHTML=kukis + " Kukis";
-    }
-  if (dinero == 1 || dinero == 0 ) {
-  document.getElementById("cuantoDinero").innerHTML=dinero + " dinero";
-  } else {
-    document.getElementById("cuantoDinero").innerHTML=dinero + " dineros";
-  }
+  actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
+  actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
   alert("Bienvenidx al modo facil, tenés " + kukis + " Kukis y " +
   dinero + " dineros");
   }
@@ -415,3 +362,30 @@ document.body.style.background = "#ffffff"
 
 
   };
+
+
+
+  /* la vieja función de actualizar plural o singular:  if (dinero == 1 || dinero == 0) {
+      cuantoDinero.innerHTML=dinero + " dinero";
+      } else {
+      cuantoDinero.innerHTML=dinero + " dineros";
+    }
+    if (kukis == 1) {
+    cuantasKukis.innerHTML=kukis + " Kuki";
+  } else {
+    cuantasKukis.innerHTML=kukis + " Kukis";
+  }*/
+
+
+  /* función que devuelve ubicación del mouse dentro de un elemento. estaba originalmente
+  dentro del footer en inicio, pero se puede meter dentro de una función activable
+
+  document.getElementById('footer').onclick = function clickEvent(cartelspam) {
+        var rect = cartelspam.target.getBoundingClientRect();
+        var x = cartelspam.clientX - rect.left; //x position within the element.
+        var y = cartelspam.clientY - rect.top;  //y position within the element.
+
+        document.getElementById("cajaPruebas").style.marginLeft = x+"px";
+        document.getElementById("cajaPruebas").style.marginTop = y+"px";
+        document.getElementById("cajaPruebas").style.visibility = "visible";
+      } */
