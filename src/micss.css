@@ -206,6 +206,48 @@ li {
   cursor: pointer;
 }
 
+.cartelera {
+  position: fixed;
+  bottom: 0;
+  width: 50vh;
+  height: 90vh;
+  left: 40%;
+  display:flex;
+  flex-direction: column-reverse;
+}
+
+.cartel01 {
+  background-image: url(../src/img/cartelin.png);
+  /*background-color: white;*/
+  position: relative;
+  background-size: 50vh, 34vh;
+  height: 34vh;
+  border: 0.5px solid #000;
+  border-radius: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: justify;
+  width: 100%;
+  margin-bottom: 5%;
+  }
+
+.cartel02 {
+  background-image: url(../src/img/cartelin.png);
+  background-color: white;
+  position: relative;
+  background-size: 50vh, 34vh;
+  height: 34vh;
+  border: 0.5px solid #000;
+  border-radius: 1%;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: justify;
+  width: 100%;
+  margin-bottom: 5%;
+  }
 
 
 .enceluno {

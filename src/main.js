@@ -18,9 +18,8 @@ function inicio(){
 
 /* bloque ACTUALIZA. actualiza la visualización de la billetera y  el contador
  de kukis, prestando atención a singulares y plurales. */
-
 actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
-actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
+actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
 };
 
@@ -50,7 +49,7 @@ function comerKuki() {
       kukis = kukis -1;
       alert("Te comiste una Kuki. ¡Bien hecho!");
 
-actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
+actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
       } else {
 
@@ -65,7 +64,7 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
                     } else {
                     alert("Estás queriendo comer más kukis de las que tenés");
                     }
-      actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
+      actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
         }
     } else if (primerasinkukis == true) {
@@ -112,7 +111,7 @@ comprarcantidad porque su value por defecto es 0) */
             }
 
             actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
-            actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
+            actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
         } else {
 
@@ -156,7 +155,7 @@ document.getElementById("botonEsforzarse").style.display=null;
   }
 /* caja ACTUAIZA */
 actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
-
+}
 /* primer trabajo */
 
 function trabajoNoCalificado() {
@@ -291,7 +290,8 @@ function desarrollo() {
   document.getElementById("desarrollo").style.display="block";
   document.getElementById("footer").style.border="0.5px solid #000";
 
-
+document.getElementById("cartel01").style.display=null;
+document.getElementById("cartel02").style.display=null;
 /* por algún motivo la animación con transición de las cajas de compra no
  funcionaron hasta que tuvieron un mínimo delay que provee el settimeout*/
 
@@ -340,7 +340,7 @@ function modofacil() {
   document.getElementById("botonEsforzarse").style.display=null;
   document.getElementById("botonEsforzarseMucho").style.visibility="visible";
   actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
-  actualizarConPluralOSingular(cuantasKukis, kukis, 'kukis');
+  actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
   alert("Bienvenidx al modo facil, tenés " + kukis + " Kukis y " +
   dinero + " dineros");
   }
