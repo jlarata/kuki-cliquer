@@ -11,8 +11,15 @@ var esfuerzo=0;
 var trabajandodobleturno=false;
 var horasextra=1;
 
+
 const cuantoDinero=document.getElementById("cuantoDinero");
 const cuantasKukis=document.getElementById("cuantasKukis");
+const cajaBotonEsforzarse=document.getElementById("cajabotonesforzarse");
+const botonEsforzarse=document.getElementById("botonEsforzarse");
+const cajaTrabajoB=document.getElementById("cajatrabajoB");
+const botonTrabajoB=document.getElementById("botontrabajoB");
+const cajaEsfMucho=document.getElementById("cajaesforzarsemucho")
+const botonEsfMucho=document.getElementById("botonEsforzarseMucho")
 
 function inicio(){
 
@@ -47,7 +54,16 @@ function comerKuki() {
     if (primeracomida == true) {
       primeracomida = false;
       kukis = kukis -1;
-      alert("Te comiste una Kuki. ¡Bien hecho!");
+      /*alert("Te comiste una Kuki. ¡Bien hecho!");*/
+
+        document.getElementById("cartel01").style.display=null;
+        coso = setTimeout(cartelin, 0005);
+        function cartelin() {
+          document.getElementById("cartel01").style.height="16vh";
+          }
+
+
+
 
 actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
@@ -69,7 +85,14 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
         }
     } else if (primerasinkukis == true) {
       primerasinkukis = false;
-      alert("No te quedan Kukis. ¡Deberías conseguir más!")
+      /*alert("No te quedan Kukis. ¡Deberías conseguir más!");*/
+
+      document.getElementById("cartel02").style.display=null;
+      cosu = setTimeout(cartelon, 0005);
+      function cartelon() {
+        document.getElementById("cartel02").style.height="16vh";
+      }
+
 /* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
       document.getElementById("botonCompra").classList.add("aparecer1");
@@ -77,6 +100,24 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
       alert("No te quedan Kukis. ¡Bien!")
       }
 };
+
+function cierracaja1() {
+  document.getElementById("cartel01").style.height="0vh";
+  cosu = setTimeout(cartelon, 0003);
+  function cartelon() {
+    document.getElementById("cartel01").style.display="none";
+  }
+}
+
+function cierracaja2() {
+  document.getElementById("cartel02").style.height="0vh";
+  cosu = setTimeout(cartelon, 0003);
+  function cartelon() {
+    document.getElementById("cartel02").style.display="none";
+  }
+}
+
+
 
 function comprarKuki() {
 
@@ -148,10 +189,14 @@ function ganaDinero(salario) {
   dinero = dinero + salario;
 /* Hace visible el botón esforzarse cuando se sume una cantidad de dinero*/
 if (dinero >= 5 && esfuerzo <= 6) {
-document.getElementById("cajabotonesforzarse").classList.add("aparecer1");
-document.getElementById("cajabotonesforzarse").style.display=null;
-document.getElementById("botonEsforzarse").classList.add("aparecer1");
-document.getElementById("botonEsforzarse").style.display=null;
+/*cajaBotonEsforzarse.classList.add("aparecer1");*/
+/*cajaBotonEsforzarse.style.display=null;*/
+cajaBotonEsforzarse.style.width="30%";
+cajaBotonEsforzarse.style.opacity="1";
+botonEsforzarse.classList.add("aparecer1");
+botonEsforzarse.style.display=null;
+botonEsforzarse.style.fontSize="100%";
+botonEsforzarse.style.width="100%";
   }
 /* caja ACTUAIZA */
 actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
@@ -210,12 +255,21 @@ function trabajoCalificado() {
 
 function esforzarse() {
 
+  pausanias(200);
+
   esfuerzo = esfuerzo + 1;
   document.getElementById("noPasaNada").style.visibility="visible";
   document.getElementById("noPasaNada").classList.add("evanescente");
   const timeOutEsf = setTimeout(esforzarseout, 500);
   if (esfuerzo >= 12) {
-    document.getElementById("botonEsforzarseMucho").style.visibility="visible";
+    /*document.getElementById("botonEsforzarseMucho").style.visibility="visible";*/
+    cajaEsfMucho.style.width="30%";
+    cajaEsfMucho.style.opacity="1";
+    botonEsfMucho.style.display=null;
+    botonEsfMucho.style.fontSize="100%";
+    botonEsfMucho.style.width="100%";
+    botonEsfMucho.style.opacity="1";
+
     }
   }
 
@@ -229,11 +283,12 @@ function esforzarseout() {
 
 function esforzarseMucho() {
 
-
 /*  dentro del botón esforzarse mucho aparece el"+12 y se anima donde esté el
  mouse onclick. ¿es más prolijo pner esto oninit o dentro de una función activable? */
 
   document.getElementById('botonEsforzarseMucho').onclick = function clickEvent(masuno) {
+
+    pausanias(100);
 
     esfuerzo = esfuerzo + 1;
     dinero = dinero + horasextra;
@@ -255,13 +310,32 @@ function esforzarseMucho() {
 aparece el de trabajar de noche */
 
   if (esfuerzo >= 20) {
-    document.getElementById("cajabotonesforzarse").style.display="none";
-    document.getElementById("botonEsforzarse").style.display="none";
+    /*document.getElementById("cajabotonesforzarse").style.display="none";
+    document.getElementById("botonEsforzarse").style.display="none";*/
+    cajaBotonEsforzarse.style.width="0%";
+    cajaBotonEsforzarse.style.opacity="0";
+    botonEsforzarse.style.fontSize="0%";
+    botonEsforzarse.style.width="0%";
+    botonEsforzarse.style.opacity="0";
+    tiempoBotonEsforzarseOut = setTimeout(cerrarCBE, 1800);
+     function cerrarCBE() {
+      botonEsforzarse.style.display="none";
+      cajaBotonEsforzarse.style.display="none";
+      }
     }
   if (esfuerzo >= 30) {
-    document.getElementById("cajatrabajoB").style.display=null;
+
+    /*cajaTrabajoB.style.display=Null;*/
+    cajaTrabajoB.style.width="30%";
+    cajaTrabajoB.style.opacity="1";
+    botonTrabajoB.style.display=null;
+    botonTrabajoB.style.fontSize="100%";
+    botonTrabajoB.style.width="100%";
+    botonTrabajoB.style.opacity="1";
+
+  /*  document.getElementById("cajatrabajoB").style.display=null;
     document.getElementById("botontrabajoB").style.display=null;
-    document.getElementById("botontrabajoB").classList.add("atenti1");
+    document.getElementById("botontrabajoB").classList.add("atenti1");*/
       }
   };
 
@@ -281,6 +355,24 @@ function actualizarConPluralOSingular(domElement, numberVariable, word) {
   ? domElement.innerHTML = numberVariable + ` ${word}`
   : domElement.innerHTML = numberVariable + ` ${word}s`;
 }
+
+
+
+/* Para evitar spameo dejando apretada una tecla, la siguiente funcion disablea
+los botones. lamentablemente cuando se desactiva se des-selecciona así que no se
+puede espamear lento */
+
+function pausanias(tiempo) {
+  botonEsforzarse.disabled=true;
+  botonEsfMucho.disabled=true;
+  var tiempoPausa = setTimeout(pausaniasout, tiempo);
+}
+
+function pausaniasout(tiempo) {
+  botonEsforzarse.disabled=false;
+  botonEsfMucho.disabled=false;
+  }
+
 
 /* habilita los cheats. */
 
@@ -334,10 +426,10 @@ function modofacil() {
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
   document.getElementById("cajatrabajoB").style.display=null;
-  document.getElementById("botontrabajoB").style.display=null;
+  botonTrabajoB.style.display=null;
   document.getElementById("cajasegundotrabajo").style.display=null;
-    document.getElementById("cajabotonesforzarse").style.display=null;
-  document.getElementById("botonEsforzarse").style.display=null;
+  cajaBotonEsforzarse.style.display=null;
+  botonEsforzarse.style.display=null;
   document.getElementById("botonEsforzarseMucho").style.visibility="visible";
   actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
   actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');

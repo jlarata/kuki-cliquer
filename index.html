@@ -57,18 +57,18 @@
             del trabajo
                productivo.” (1776)</em><p/></div>
         <div class="botoneratrabajo">
-            <div class="col-3">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
 
+            <div class="col-3" id="cajabotontrabajar">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
             <!-- la caja con el botón de esforzarse y la caja posición absoluta con el msg "no pasa nada"-->
-            <div class="col-3" id=cajabotonesforzarse style="position:relative; display:none">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="display:none;">Esforzarse</button>
+            <div class="col-3" id=cajabotonesforzarse style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="display:none;">Esforzarse</button>
             <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
 
             <!-- la caja con el botón de trabajo alternativo-->
 
-            <div class="col-3" id="cajatrabajoB" style=display:none><button class="btn" id="botontrabajoB" style=display:none onclick="trabajoDurisimo()">Trabajar doble turno</button></div>
+            <div class="col-3" id="cajatrabajoB"><button class="btn" id="botontrabajoB" onclick="trabajoDurisimo()" style="display:none;">Trabajar doble turno</button></div>
             <!-- la caja con el botón de esforzarse MUCHO-->
-            <div class="col-3" style="position:relative">
-              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="visibility:hidden;">Esforzarse <em>mucho</em></button>
+            <div class="col-3" id="cajaesforzarsemucho" style="position:relative">
+              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="display:none";>Esforzarse <em>mucho</em></button>
               <p id="ganamasuno" style="position:absolute; top: -5%; visibility:hidden">+1</p>
             </div>
         </div>
@@ -129,10 +129,8 @@
 </div>
 
 <div class=cartelera>
-  <div id="cartel01" class=cartel01 style=display:none> scelerisque dignissim ut vel mi.
-      Praesent at mauris ipsum.<img src=src/img/XX.png class="x" onclick="()"></img></div>
-  <div id="cartel02" class=cartel02 style=display:none>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-     Nullam eu urna uris ipsum<img src=src/img/XX.png class="x" onclick="()"></img></div>
+  <div id="cartel01" style="display:none">Te comiste una Kuki. ¡Bien hecho!<img src=src/img/XX.png class="x" onclick="cierracaja1()"></img></div>
+  <div id="cartel02" style=display:none>No te quedan más Kukis. ¿Deberías conseguir más? <img src=src/img/XX.png class="x" onclick="cierracaja2()"></img></div>
 </div>
 
 <div class=enceluno>
