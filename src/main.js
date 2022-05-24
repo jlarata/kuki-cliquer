@@ -66,6 +66,15 @@ function spamoutb() {
 	list.removeChild(list.lastElementChild);
   }
 
+function spamoutc() {
+  var e = document.getElementById("cartelera");
+  var child = e.lastElementChild;
+  while (child) {
+    e.removeChild(child);
+    child = e.lastElementChild;
+    }
+  }
+
 
 
 function cartelinfonoche() {
