@@ -334,7 +334,7 @@ li {
   /*background-color: white;*/
   position: relative;
   background-size: 33vh 19vh;
-  height: 0vh;
+  height: 0.0vh;
   border: 0.5px solid #000;
   border-radius: 1%;
   display: flex;
@@ -345,15 +345,20 @@ li {
   width: 100%;
   margin-bottom: 5%;
   pointer-events: all;
-  transition: height 1s;
+  transition: height 0.8s, opacity 0.2s;
   }
+
+.cartel01:hover {
+  background-color: #E1DCE0;
+  opacity: 0.5;
+}
 
 .cartel02 {
   background-image: url(../src/img/cartelin.png);
   background-color: white;
   position: relative;
   background-size: 33vh 19vh;
-  height: 0.1vh;
+  height: 0.0vh;
   border: 0.5px solid #000;
   border-radius: 1%;
   display: block;
@@ -365,7 +370,12 @@ li {
   width: 100%;
   margin-bottom: 5%;
   pointer-events: all;
-  transition: height 1s;
+  transition: height 0.8s, opacity 0.2s;
+  }
+
+.cartel02:hover {
+  background-color: #E1DCE0;
+  opacity: 0.5;
   }
 
 

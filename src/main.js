@@ -30,6 +30,43 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
 };
 
+function spam1() {
+  const spm = document.createElement("div");
+  spm.classList.add("cartel01");
+  const node = document.createTextNode("lalala dale boke.");
+  spm.appendChild(node);
+  document.getElementById("cartelera").appendChild(spm);
+  coso = setTimeout(cartelin, 0005);
+  function cartelin() {
+    spm.style.height="16vh";
+    }
+  }
+
+function spam2() {
+  const spm2 = document.createElement("div");
+  spm2.classList.add("cartel02");
+  const node2 = document.createTextNode("y pegue, y pegue boke pegue.");
+  spm2.appendChild(node2);
+  document.getElementById("cartelera").appendChild(spm2);
+  coso = setTimeout(cartelin2, 0005);
+  function cartelin2() {
+    spm2.style.height="16vh";
+    }
+  }
+
+
+function spamout() {
+
+	const list = document.getElementById("cartelera");
+	list.removeChild(list.firstElementChild);
+  }
+
+function spamoutb() {
+	const list = document.getElementById("cartelera");
+	list.removeChild(list.lastElementChild);
+  }
+
+
 
 function cartelinfonoche() {
   document.getElementById('cajanoche').style.display="block";
