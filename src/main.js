@@ -54,9 +54,7 @@ function spam2() {
     }
   }
 
-
 function spamout() {
-
 	const list = document.getElementById("cartelera");
 	list.removeChild(list.firstElementChild);
   }
@@ -95,21 +93,19 @@ function cartelinfonocheout() {
    }
 }
 
+
+
 function comerKuki() {
   if (kukis >=1) {
     if (primeracomida == true) {
       primeracomida = false;
       kukis = kukis -1;
       /*alert("Te comiste una Kuki. ¡Bien hecho!");*/
-
-        document.getElementById("cartel01").style.display=null;
+        /*document.getElementById("cartel01").style.display=null;
         coso = setTimeout(cartelin, 0005);
         function cartelin() {
           document.getElementById("cartel01").style.height="16vh";
-          }
-
-
-
+        }*/
 
 actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
@@ -133,11 +129,11 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
       primerasinkukis = false;
       /*alert("No te quedan Kukis. ¡Deberías conseguir más!");*/
 
-      document.getElementById("cartel02").style.display=null;
+/*      document.getElementById("cartel02").style.display=null;
       cosu = setTimeout(cartelon, 0005);
       function cartelon() {
         document.getElementById("cartel02").style.height="16vh";
-      }
+      }*/
 
 /* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
