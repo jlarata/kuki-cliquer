@@ -18,8 +18,9 @@ const cajaBotonEsforzarse=document.getElementById("cajabotonesforzarse");
 const botonEsforzarse=document.getElementById("botonEsforzarse");
 const cajaTrabajoB=document.getElementById("cajatrabajoB");
 const botonTrabajoB=document.getElementById("botontrabajoB");
-const cajaEsfMucho=document.getElementById("cajaesforzarsemucho")
-const botonEsfMucho=document.getElementById("botonEsforzarseMucho")
+const cajaEsfMucho=document.getElementById("cajaesforzarsemucho");
+const botonEsfMucho=document.getElementById("botonEsforzarseMucho");
+const cartelNopasanada=document.getElementById("noPasaNada");
 
 function inicio(){
 
@@ -30,48 +31,7 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
 };
 
-function spam1() {
-  const spm = document.createElement("div");
-  spm.classList.add("cartel01");
-  const node = document.createTextNode("lalala dale boke.");
-  spm.appendChild(node);
-  document.getElementById("cartelera").appendChild(spm);
-  coso = setTimeout(cartelin, 0005);
-  function cartelin() {
-    spm.style.height="16vh";
-    }
-  }
 
-function spam2() {
-  const spm2 = document.createElement("div");
-  spm2.classList.add("cartel02");
-  const node2 = document.createTextNode("y pegue, y pegue boke pegue.");
-  spm2.appendChild(node2);
-  document.getElementById("cartelera").appendChild(spm2);
-  coso = setTimeout(cartelin2, 0005);
-  function cartelin2() {
-    spm2.style.height="16vh";
-    }
-  }
-
-function spamout() {
-	const list = document.getElementById("cartelera");
-	list.removeChild(list.firstElementChild);
-  }
-
-function spamoutb() {
-	const list = document.getElementById("cartelera");
-	list.removeChild(list.lastElementChild);
-  }
-
-function spamoutc() {
-  var e = document.getElementById("cartelera");
-  var child = e.lastElementChild;
-  while (child) {
-    e.removeChild(child);
-    child = e.lastElementChild;
-    }
-  }
 
 
 
@@ -127,13 +87,7 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
         }
     } else if (primerasinkukis == true) {
       primerasinkukis = false;
-      /*alert("No te quedan Kukis. ¡Deberías conseguir más!");*/
-
-/*      document.getElementById("cartel02").style.display=null;
-      cosu = setTimeout(cartelon, 0005);
-      function cartelon() {
-        document.getElementById("cartel02").style.height="16vh";
-      }*/
+      alert("No te quedan Kukis. ¡Deberías conseguir más! recordatorio: cambiar spam por spam");
 
 /* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
@@ -229,10 +183,9 @@ luego de presionado, este botón está al pedo. ¿hacerlo desaparecer? ¿achicar
 
 function ganaDinero(salario) {
   dinero = dinero + salario;
+
 /* Hace visible el botón esforzarse cuando se sume una cantidad de dinero*/
 if (dinero >= 5 && esfuerzo <= 6) {
-/*cajaBotonEsforzarse.classList.add("aparecer1");*/
-/*cajaBotonEsforzarse.style.display=null;*/
 cajaBotonEsforzarse.style.width="30%";
 cajaBotonEsforzarse.style.opacity="1";
 botonEsforzarse.classList.add("aparecer1");
@@ -300,11 +253,11 @@ function esforzarse() {
   pausanias(200);
 
   esfuerzo = esfuerzo + 1;
-  document.getElementById("noPasaNada").style.visibility="visible";
-  document.getElementById("noPasaNada").classList.add("evanescente");
-  const timeOutEsf = setTimeout(esforzarseout, 500);
+  cartelNopasanada.style.visibility="visible";
+  cartelNopasanada.classList.add("evanescente");
+    const timeOutEsf = setTimeout(esforzarseout, 500);
   if (esfuerzo >= 12) {
-    /*document.getElementById("botonEsforzarseMucho").style.visibility="visible";*/
+
     cajaEsfMucho.style.width="30%";
     cajaEsfMucho.style.opacity="1";
     botonEsfMucho.style.display=null;
@@ -316,8 +269,8 @@ function esforzarse() {
   }
 
 function esforzarseout() {
-  document.getElementById("noPasaNada").style.visibility="hidden";
-  document.getElementById("noPasaNada").classList.remove("evanescente");
+  cartelNopasanada.style.visibility="hidden";
+  cartelNopasanada.classList.remove("evanescente");
   }
 
 /*  suma un dinero por click y eventualmente da display a la caja de trabajo B.
@@ -388,9 +341,8 @@ function animaganamasunoout() {
   document.getElementById("ganamasuno").style.visibility="hidden";
   }
 
-
-/* actualiza las cajas de kukis y dinero cambiando el texto según el numero sea
-singular o plural */
+/* updates both kukis and dinero input-fields. adds a "s" string in the end if
+the variable is plural (plural being: 2) */
 
 function actualizarConPluralOSingular(domElement, numberVariable, word) {
   numberVariable < 2
@@ -398,11 +350,9 @@ function actualizarConPluralOSingular(domElement, numberVariable, word) {
   : domElement.innerHTML = numberVariable + ` ${word}s`;
 }
 
-
-
-/* Para evitar spameo dejando apretada una tecla, la siguiente funcion disablea
-los botones. lamentablemente cuando se desactiva se des-selecciona así que no se
-puede espamear lento */
+/* to stop fast-múltiple-spam by just pressing enter. next function disables both
+buttons by id. sadly, when deactivated, buttons get unselected so it is also
+impossible to slowly múltiple spam by pressing enter =( */
 
 function pausanias(tiempo) {
   botonEsforzarse.disabled=true;
@@ -415,6 +365,52 @@ function pausaniasout(tiempo) {
   botonEsfMucho.disabled=false;
   }
 
+/* two different-styled spam-message coming from the mid-bottom of the screen
+ and three different methods to remove them */
+
+function spam1() {
+  spm = document.createElement("div");
+  spm.classList.add("cartel01");
+  node = document.createTextNode("lalala dale boke.");
+  spm.appendChild(node);
+  document.getElementById("cartelera").appendChild(spm);
+  coso = setTimeout(cartelin, 0003);
+  function cartelin() {
+    spm.style.height="16vh";
+    }
+  }
+
+function spam2() {
+  spm2 = document.createElement("div");
+  spm2.classList.add("cartel02");
+  node2 = document.createTextNode("y pegue, y pegue boke pegue.");
+  spm2.appendChild(node2);
+  document.getElementById("cartelera").appendChild(spm2);
+  coso = setTimeout(cartelin2, 0005);
+  function cartelin2() {
+    spm2.style.height="16vh";
+    }
+  }
+
+function spamout() {
+	const list = document.getElementById("cartelera");
+	list.removeChild(list.firstElementChild);
+  }
+
+function spamoutb() {
+  const list = document.getElementById("cartelera");
+  list.removeChild(list.lastElementChild);
+  }
+
+function spamoutAll() {
+  var e = document.getElementById("cartelera");
+  var child = e.lastElementChild;
+  while (child) {
+    e.removeChild(child);
+      child = e.lastElementChild;
+    }
+  }
+
 
 /* habilita los cheats. */
 
@@ -424,8 +420,6 @@ function desarrollo() {
   document.getElementById("desarrollo").style.display="block";
   document.getElementById("footer").style.border="0.5px solid #000";
 
-document.getElementById("cartel01").style.display=null;
-document.getElementById("cartel02").style.display=null;
 /* por algún motivo la animación con transición de las cajas de compra no
  funcionaron hasta que tuvieron un mínimo delay que provee el settimeout*/
 
@@ -468,11 +462,29 @@ function modofacil() {
   document.getElementById("trabajomuyduro").style.display="block";
   document.getElementById("textotrabajomuyduro").style.visibility="visible";
   document.getElementById("cajatrabajoB").style.display=null;
+  cajaTrabajoB.style.width="30%";
+  cajaTrabajoB.style.opacity="1";
   botonTrabajoB.style.display=null;
+  botonTrabajoB.style.fontSize="100%";
+  botonTrabajoB.style.width="100%";
+  botonTrabajoB.style.opacity="1";
   document.getElementById("cajasegundotrabajo").style.display=null;
-  cajaBotonEsforzarse.style.display=null;
+
+  cajaBotonEsforzarse.style.width="30%";
+  cajaBotonEsforzarse.style.opacity="1";
+  botonEsforzarse.classList.add("aparecer1");
   botonEsforzarse.style.display=null;
-  document.getElementById("botonEsforzarseMucho").style.visibility="visible";
+  botonEsforzarse.style.fontSize="100%";
+  botonEsforzarse.style.width="100%";
+
+  cajaEsfMucho.style.width="30%";
+  cajaEsfMucho.style.opacity="1";
+  botonEsfMucho.style.display=null;
+  botonEsfMucho.style.fontSize="100%";
+  botonEsfMucho.style.width="100%";
+  botonEsfMucho.style.opacity="1";
+
+
   actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
   actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
   alert("Bienvenidx al modo facil, tenés " + kukis + " Kukis y " +
