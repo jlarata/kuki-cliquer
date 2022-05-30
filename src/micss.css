@@ -317,6 +317,15 @@ li {
   cursor: pointer;
 }
 
+.xx {
+  position: absolute;
+  bottom: 7%;
+  right: 0.5%;
+  width: 8%;
+  height: 8%;
+  cursor: pointer;
+  }
+
 .cartelera {
   position: fixed;
   bottom: 0;

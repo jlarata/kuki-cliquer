@@ -60,12 +60,7 @@ function comerKuki() {
     if (primeracomida == true) {
       primeracomida = false;
       kukis = kukis -1;
-      /*alert("Te comiste una Kuki. ¡Bien hecho!");*/
-        /*document.getElementById("cartel01").style.display=null;
-        coso = setTimeout(cartelin, 0005);
-        function cartelin() {
-          document.getElementById("cartel01").style.height="16vh";
-        }*/
+      spam2(`Comiste una Kuki. ¡Bien hecho!`);
 
 actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
@@ -87,31 +82,19 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
         }
     } else if (primerasinkukis == true) {
       primerasinkukis = false;
-      alert("No te quedan Kukis. ¡Deberías conseguir más! recordatorio: cambiar spam por spam");
+      spam2(`No te quedan Kukis. ¡Deberías conseguir más!`);
 
 /* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
       document.getElementById("botonCompra").classList.add("aparecer1");
     } else {
-      alert("No te quedan Kukis. ¡Bien!")
+      spam2(`No te quedan Kukis. ¡Bien!`);
       }
 };
 
-function cierracaja1() {
-  document.getElementById("cartel01").style.height="0vh";
-  cosu = setTimeout(cartelon, 0003);
-  function cartelon() {
-    document.getElementById("cartel01").style.display="none";
-  }
-}
 
-function cierracaja2() {
-  document.getElementById("cartel02").style.height="0vh";
-  cosu = setTimeout(cartelon, 0003);
-  function cartelon() {
-    document.getElementById("cartel02").style.display="none";
-  }
-}
+
+
 
 
 
@@ -121,7 +104,7 @@ function comprarKuki() {
   modificación del texto del botón de CONSEGUIR a comprar. ¿conciencia +1? */
   if (fer == 2) {
   fer = 3;
-  alert("comprar cuesta dineros")
+  spam2(`Comprar cuesta dineros...`);
   document.getElementById("botonCompra").innerHTML = "Comprar Kuki!";
   document.getElementById("botonCompra").classList.replace("aparecer1", "atenti1");
   document.getElementById("billetera").style.visibility="visible";
@@ -154,7 +137,7 @@ comprarcantidad porque su value por defecto es 0) */
 
           /* habiita caja citas, primer trabajo y comer y comprar cantidad*/
 
-          alert("No te queda más dinero. ¡Buenísimo!");
+          spam2(`No te queda más dinero. ¡Buenísimo!`);
           document.getElementById("botonTrabajar").classList.add("aparecer3");
           document.getElementById("smith").classList.add("aparecer2");
           document.getElementById("smith").style.visibility="visible"
@@ -380,16 +363,27 @@ function spam1() {
     }
   }
 
-function spam2() {
+function spam2(texto) {
   spm2 = document.createElement("div");
   spm2.classList.add("cartel02");
-  node2 = document.createTextNode("y pegue, y pegue boke pegue.");
+  node2 = document.createTextNode(texto);
   spm2.appendChild(node2);
   document.getElementById("cartelera").appendChild(spm2);
   coso = setTimeout(cartelin2, 0005);
   function cartelin2() {
     spm2.style.height="16vh";
     }
+    xSignOut = setTimeout(xSign, 0005);
+    function xSign() {
+    spmX = document.createElement("div");
+    spmX.classList.add("xx");
+    spmX.setAttribute("onclick","properSpamOut(this)");
+    node3=document.createElement("img");
+    node3.src="src/img/X.png";
+    spmX.appendChild(node3);
+    spm2.appendChild(spmX);}
+
+
   }
 
 function spamout() {
@@ -410,6 +404,10 @@ function spamoutAll() {
       child = e.lastElementChild;
     }
   }
+
+  function properSpamOut(ej) {
+    ej.parentElement.remove();
+    }
 
 
 /* habilita los cheats. */
@@ -534,4 +532,23 @@ document.body.style.background = "#ffffff"
         document.getElementById("cajaPruebas").style.marginLeft = x+"px";
         document.getElementById("cajaPruebas").style.marginTop = y+"px";
         document.getElementById("cajaPruebas").style.visibility = "visible";
+      } */
+
+
+/* primeros intentos de cajas spam
+
+      function cierracaja1() {
+        document.getElementById("cartel01").style.height="0vh";
+        cosu = setTimeout(cartelon, 0003);
+        function cartelon() {
+          document.getElementById("cartel01").style.display="none";
+        }
+      }
+
+      function cierracaja2() {
+        document.getElementById("cartel02").style.height="0vh";
+        cosu = setTimeout(cartelon, 0003);
+        function cartelon() {
+          document.getElementById("cartel02").style.display="none";
+        }
       } */
