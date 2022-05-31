@@ -366,6 +366,25 @@ function spam1() {
 function spam2(texto) {
   spm2 = document.createElement("div");
   spm2.classList.add("cartel02");
+  spm2.setAttribute("onclick","properSpamOut(this)");
+  spm2.style.cursor="pointer";
+  node2 = document.createTextNode(texto);
+  spm2.appendChild(node2);
+  document.getElementById("cartelera").appendChild(spm2);
+  coso = setTimeout(cartelin2, 0005);
+  function cartelin2() {
+    spm2.style.height="16vh";
+    }
+  }
+
+/* Former Spam Function, creating and appending a div element (x) and setting
+in that element the atribute onClick=properSpamOut() that close the Parent Spam
+Includes the former properSpamOut function.
+
+
+function spam2(texto) {
+  spm2 = document.createElement("div");
+  spm2.classList.add("cartel02");
   node2 = document.createTextNode(texto);
   spm2.appendChild(node2);
   document.getElementById("cartelera").appendChild(spm2);
@@ -382,9 +401,16 @@ function spam2(texto) {
     node3.src="src/img/X.png";
     spmX.appendChild(node3);
     spm2.appendChild(spmX);}
-
-
   }
+
+  function properSpamOut(ej) {
+    ej.parentElement.remove();
+    }
+
+
+  */
+
+
 
 function spamout() {
 	const list = document.getElementById("cartelera");
@@ -406,7 +432,7 @@ function spamoutAll() {
   }
 
   function properSpamOut(ej) {
-    ej.parentElement.remove();
+    ej.remove();
     }
 
 
