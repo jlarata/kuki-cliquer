@@ -573,8 +573,8 @@ li {
   }
 
 .cajatrabajo > img {
-  max-width: 14vh;
-  max-height: 14vh;
+  width: 14vh;
+  height: 14vh;
   }
 
 .row {
@@ -642,6 +642,7 @@ li {
   width: 25%;
   max-height: 100%;
   vertical-align: middle;
+  padding: 0.5%;
 }
 
 .col-4 {
