@@ -183,8 +183,10 @@ actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
 
 function trabajoNoCalificado() {
   if (trabajando == false) {
-      trabajando = true;
-      dosporsegundo = setInterval(ganaDinero, 1000, 2);
+    brnday()
+
+    trabajando = true;
+    dosporsegundo = setInterval(ganaDinero, 1000, 2);
     }
   }
 
@@ -377,6 +379,52 @@ function spam2(texto) {
     }
   }
 
+/* personalized spam-message conceived to pop up just one time */
+
+function brnday() {
+abc1 = "Hopelessly saturated with hope and ambition, you borrow some money from your family to show up on your first day at the office wearing an expensive shirt, fresh haircut, and polished shoes.";
+abc2 = "Exultant, excited, armed with your infallible smile and your impeccable habits, you succesfully go through your first full working day, then another, and another, and another...";
+spam3(`${abc1}`,`${abc2}`)
+  }
+
+function spam3(texto1, texto2) {
+    spm3 = document.createElement("div");
+    spm3.classList.add("cartelbrnday");
+    /*spm2.setAttribute("onclick","properSpamOut(this)");
+    spm2.style.cursor="pointer";*/
+    node3 = document.createTextNode(texto1);
+    spm3.appendChild(node3);
+    node4 = document.createElement("br");
+    spm3.appendChild(node4);
+    node5 = document.createElement("br");
+    spm3.appendChild(node5);
+    node7 = document.createTextNode(texto2);
+    spm3.appendChild(node7);
+
+    spmX = document.createElement("div");
+    spmX.classList.add("xx");
+    spmX.setAttribute("onclick","parentSpamOut(this)");
+    node8=document.createElement("img");
+    node8.src="src/img/X.png";
+    spmX.appendChild(node8);
+    spm3.appendChild(spmX);
+
+    document.getElementById("spamgrande").appendChild(spm3);
+    coso = setTimeout(cartelin3, 005);
+    function cartelin3() {
+      spm3.style.opacity=0.9;
+    }
+    }
+
+  /*  function cartelinfonocheout() {
+    document.getElementById('cajanoche').style.opacity=0;
+    tiempitoA = setTimeout(cerrarcaja, 1500);
+     function cerrarcaja() {
+       document.getElementById('cajanoche').style.visibility="hidden";
+       document.getElementById('cajanoche').style.display="none";
+     }
+  }*/
+
 /* Former Spam Function, creating and appending a div element (x) and setting
 in that element the atribute onClick=properSpamOut() that close the Parent Spam
 Includes the former properSpamOut function.
@@ -431,9 +479,17 @@ function spamoutAll() {
     }
   }
 
-  function properSpamOut(ej) {
-    ej.remove();
-    }
+function properSpamOut(ej) {
+  ej.remove();
+  }
+
+function parentSpamOut(ej) {
+  ej.parentElement.style.opacity=0;
+
+  coso = setTimeout(parentOut, 1000);
+  function parentOut() {
+  ej.parentElement.remove();}
+  }
 
 
 /* habilita los cheats. */

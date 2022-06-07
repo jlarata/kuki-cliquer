@@ -309,6 +309,31 @@ li {
   transition: opacity 1.5s;
   }
 
+.cartelbrnday {
+  background-image: url(../src/img/brnday.jpg);
+  width: 80%;
+  height: 85%;
+  position: fixed;
+  background-size: contain;
+  margin-left: 1%;
+  border: 0.5px solid #000;
+  border-radius: 1%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  padding: 5%;
+  text-align: justify;
+  font-family: dogicapixel;
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  z-index: 1;
+/*  visibility: hidden;*/
+  transition: opacity 2.5s;
+  }
+
+
 .x {
   position: absolute;
   bottom: 1%;
