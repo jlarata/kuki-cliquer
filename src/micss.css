@@ -19,6 +19,11 @@
 
 #body {}
 
+#Swingprovisando
+{
+  display: none;
+}
+
 .noche {
   background-image: url(../src/img/noche.jpg);
 }
@@ -348,6 +353,24 @@ li {
   right: 0.5%;
   width: 8%;
   height: 8%;
+  cursor: pointer;
+  }
+
+.N {
+  position: absolute;
+  bottom: 1em;
+  right: 4em;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+  }
+
+ .Y {
+  position: absolute;
+  bottom: 1em;
+  left: 4em;
+  width: 20%;
+  height: 20%;
   cursor: pointer;
   }
 

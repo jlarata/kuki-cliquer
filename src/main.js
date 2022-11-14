@@ -21,6 +21,7 @@ const botonTrabajoB=document.getElementById("botontrabajoB");
 const cajaEsfMucho=document.getElementById("cajaesforzarsemucho");
 const botonEsfMucho=document.getElementById("botonEsforzarseMucho");
 const cartelNopasanada=document.getElementById("noPasaNada");
+const improFunes=document.getElementById("Swingprovisando");
 
 function inicio(){
 
@@ -28,6 +29,12 @@ function inicio(){
  de kukis, prestando atención a singulares y plurales. */
 actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
 actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
+
+tiempomusic = setTimeout(cartelmusica, 3000);
+            function cartelmusica()
+              {
+                musicmaybe();
+              };  
 
 };
 
@@ -82,12 +89,15 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
         }
     } else if (primerasinkukis == true) {
       primerasinkukis = false;
+      
+    
       spam2(`No te quedan Kukis. ¡Deberías conseguir más!`);
 
 /* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
       document.getElementById("botonCompra").classList.add("aparecer1");
     } else {
+      
       spam2(`No te quedan Kukis. ¡Bien!`);
       }
 };
@@ -143,6 +153,8 @@ comprarcantidad porque su value por defecto es 0) */
           document.getElementById("smith").style.visibility="visible"
           document.getElementById("comprarcantidad").style.display=null;
           document.getElementById("comercantidad").style.display=null;
+          
+
           tiempocaja = setTimeout(abrircajas, 0001);
            function abrircajas() {
              document.getElementById("comprarcantidad").style.width="50%";
@@ -379,6 +391,18 @@ function spam2(texto) {
     }
   }
 
+  function spam4(texto) {
+    spm4 = document.createElement("div");
+    spm4.classList.add("cartel02");
+    node4 = document.createTextNode(texto);
+    spm4.appendChild(node4);
+    document.getElementById("cartelera").appendChild(spm4);
+    coso = setTimeout(cartelin4, 0005);
+    function cartelin4() {
+      spm4.style.height="16vh";
+      }
+    }
+
 /* personalized spam-message conceived to pop up just one time */
 
 function brnday() {
@@ -386,6 +410,32 @@ abc1 = "Hopelessly saturated with hope and ambition, you borrow some money from 
 abc2 = "Exultant, excited, armed with your infallible smile and your impeccable habits, you succesfully go through your first full working day, then another, and another, and another...";
 spam3(`${abc1}`,`${abc2}`)
   }
+
+/* personalized spam-message to allow music */
+
+function musicmaybe() {
+  abc1 = "would you like to hear a wonderful piano improvisation by José Funes?";
+  spam4(`${abc1}`)
+
+  spmN = document.createElement("div");
+  spmN.classList.add("N");
+  spmN.setAttribute("onclick","parentSpamOut(this)");
+  node1=document.createElement("img");
+  node1.src="src/img/XX.png";
+  spmN.appendChild(node1);
+  spm4.appendChild(spmN);
+
+  spmY = document.createElement("div");
+  spmY.classList.add("Y");
+  spmY.setAttribute("onclick","parentSpamOut(this)");
+  node1=document.createElement("img");
+  node1.src="src/img/check.webp";
+  spmY.appendChild(node1);
+  spm4.appendChild(spmY);
+    }
+
+
+
 
 function spam3(texto1, texto2) {
     spm3 = document.createElement("div");
