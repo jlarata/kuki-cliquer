@@ -31,46 +31,43 @@
 
 
     <div class="col-3 aparecer2 generalc"><ul style="list-style-type:none;">
-    <li><h5>Tenés <span id="cuantasKukis"></span>.</h5></li>
+    <li><h5>You have <span id="cuantasKukis"></span>.</h5></li>
     <li><br></li>
     <li class=linealinea>
-      <button class="btn aparecer3" onclick="comerKuki()">Comer Kuki</button>
+      <button class="btn aparecer3 btn-secondary" onclick="comerKuki()">Eat</button>
       <input type="number" min="0" oninput="validity.valid||(value='')" id="comercantidad" placeholder="¿cuantas?" class="estable" value=1 style=display:none>
     </li>
     <li class="aparecer4"><br><hr><br></li>
     <li class=linealineab>
       <input type="number" min="0" oninput="validity.valid||(value='')" id="comprarcantidad" placeholder="¿cuántas?" class="estable" value=1 style=display:none>
-      <button  id="botonCompra" class="btn" onclick="comprarKuki()" style=visibility:hidden>Conseguir Kuki</button>
+      <button  id="botonCompra" class="btn" onclick="comprarKuki()" style=visibility:hidden>Get Kuki</button>
     <!--</div>--></li>
     </ul>
     </div>
 
     <div class="col-3">
       <div id="billetera" class=row style=visibility:hidden>
-        <p class=alter>Tenés <span id="cuantoDinero"></span></p>
+        <p class=alter>You have <span id="cuantoDinero"></span></p>
       </div>
     </div>
     <div class="col-5 citasybotonera" id="smith" style="visibility:hidden;">
       <div class="citas">
-        <!-- esto iba con <pre> pero me estaba volciendo loco --> <p><em>“si exceptuamos la producción
-           espontánea de la tierra,
-     el conjunto del producto anual
-         es consecuencia
-            del trabajo
-               productivo.” (1776)</em><p/></div>
+        <!-- esto iba con <pre> pero me estaba volciendo loco --> <p><em>
+          “...the whole annual produce, if we except the spontaneous productions of the earth,
+           [is] the effect of productive labour” (1776)</em></p></div>
         <div class="botoneratrabajo">
 
-            <div class="col-3" id="cajabotontrabajar">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Trabajar</button></div>
+            <div class="col-3" id="cajabotontrabajar">  <button id="botonTrabajar" class="btn" onclick="trabajar()">Work</button></div>
             <!-- la caja con el botón de esforzarse y la caja posición absoluta con el msg "no pasa nada"-->
-            <div class="col-3" id=cajabotonesforzarse style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="display:none;">Esforzarse</button>
-            <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">no pasa nada</p></div>
+            <div class="col-3" id=cajabotonesforzarse style="position:relative;">  <button id="botonEsforzarse" class="btn" onclick="esforzarse()" style="display:none;">Try Hard</button>
+            <p id="noPasaNada" style="position: absolute; top:-5%; visibility:hidden;">nothing happens</p></div>
 
             <!-- la caja con el botón de trabajo alternativo-->
 
-            <div class="col-3" id="cajatrabajoB"><button class="btn" id="botontrabajoB" onclick="trabajoDurisimo()" style="display:none;">Trabajar doble turno</button></div>
+            <div class="col-3" id="cajatrabajoB"><button class="btn" id="botontrabajoB" onclick="trabajoDurisimo()" style="display:none;">Work Double Shift</button></div>
             <!-- la caja con el botón de esforzarse MUCHO-->
             <div class="col-3" id="cajaesforzarsemucho" style="position:relative">
-              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="display:none";>Esforzarse <em>mucho</em></button>
+              <button id="botonEsforzarseMucho" class="btn" onclick="esforzarseMucho()" style="display:none";>Try <em>really</em> hard</button>
               <p id="ganamasuno" style="position:absolute; top: -5%; visibility:hidden">+1</p>
             </div>
         </div>
@@ -87,17 +84,17 @@
           <div class="cajatrabajo">
             <div class="col-3"></div>
           <ul style="visibility:hidden; list-style-type:none;" class="text-muted small text-justify" id="textotrabajomuyduro">
-          <li>estás trabajando muy duro en el <em>kukicall center</em></li>
-          <li>tu salario es 2 dineros por segundo</li></ul></div>
+          <li>Working hard in the <em>kukicall center</em></li>
+          <li>Your income is 7.2K dineros per hour </li></ul></div>
         </div>
-        <div class="col-2" id="cajasegundotrabajo" style=display:none>
+        <div class="col-3" id="cajasegundotrabajo" style=display:none>
             <div class="cajatrabajo"><img id="trabajoentregas" src=src/img/kkdlv.png></div>
             <div class="cajatrabajo">
               <div class="col-3"></div>
             <ul style="list-style-type:none;" class="text-muted small text-justify" id="textodelivery">
-            <li>tarde y noche sin parar</li>
-            <li>en <em>kuki-entregas</em></li>
-            <li>a 2 dineros por segundo</li></ul></div>
+            <li>afternoons and nights, relentless</li>
+            <li>in <em>kuki-delivery (7.2K dph)</em></li>
+            </ul></div>
         </div>
 
 
@@ -112,10 +109,15 @@
 
   </div>
 
-  <audio id="Swingprovisando" src="./src/msc/Jose Funes - Swingprovisando-AZhVzhvcr-U.webm" controls="controls"></audio>
+  <audio id="Swingprovisando" src="./src/msc/Jose Funes - Swingprovisando-AZhVzhvcr-U.webm"
+   controls="controls"></audio>
 
   <div class="footer" id=footer style="position:absolute; top:120%">
-    <div><button title="contraseña string 8"  class=btn onclick="desarrollo()">cheats</button>
+    <div>
+      <button title="contraseña string 8" class="btn btn-secondary" onclick="desarrollo()">cheats</button>
+    </div>
+    <div>
+      <a href="https://github.com/jlarata/kuki-cliquer/blob/master/README.txt"><button class="btn btn-secondary">readme</button></a>
     </div>
     <div id=cajaPruebas style=visibility:hidden>asd</div>
 
@@ -123,11 +125,11 @@
     <div id="desarrollo" style=display:none>
       <button title="todos los display en bloque y visibles, y las row estructurales se muestran con borde sólido" class="btn" onclick="modofacil()">activar modo fácil</button>
       <button onclick="brnday()">cartel spam 3</button>
-      <button class=btn onclick="spam1()">spam</button>
-      <button class=btn onclick="spam2(`texto de prueba`)">otro spam</button>
-      <button class=btn onclick="spamout()">chau spam viejo</button>
-      <button class=btn onclick="spamoutb()">chau spam nuevo</button>
-      <button class=btn onclick="spamoutAll()">chau chau todito el spam</button>
+      <button class="btn btn-secondary" onclick="spam1()">spam</button>
+      <button class="btn btn-secondary" onclick="spam2(`texto de prueba`)">otro spam</button>
+      <button class="btn btn-secondary" onclick="spamout()">chau spam viejo</button>
+      <button class="btn btn-secondary" onclick="spamoutb()">chau spam nuevo</button>
+      <button class="btn btn-secondary" onclick="spamoutAll()">chau chau todito el spam</button>
       <br>
       <button onclick="cartelinfonoche()">Prueba Cartel Spam con imagen</button>
       <button onclick="color()">Fondo Color Random</button>

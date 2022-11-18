@@ -25,8 +25,10 @@ const improFunes=document.getElementById("Swingprovisando");
 
 function inicio(){
 
-/* bloque ACTUALIZA. actualiza la visualización de la billetera y  el contador
- de kukis, prestando atención a singulares y plurales. */
+/* ##############################################################################
+funciones de ACTUALIZACIÓN. actualiza la visualización de la billetera y  el contador
+ de kukis, prestando atención a singulares y plurales. 
+############################################################################## */
 actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
 actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
@@ -42,32 +44,13 @@ tiempomusic = setTimeout(cartelmusica, 3000);
 
 
 
-function cartelinfonoche() {
-  document.getElementById('cajanoche').style.display="block";
-  document.getElementById('cajanoche').style.visibility="visible";
-  tiempitoB = setTimeout(abrircaja, 100);
-   function abrircaja() {
-  document.getElementById('cajanoche').style.opacity=1;
-  }
-}
-
-function cartelinfonocheout() {
-  document.getElementById('cajanoche').style.opacity=0;
-  tiempitoA = setTimeout(cerrarcaja, 1500);
-   function cerrarcaja() {
-     document.getElementById('cajanoche').style.visibility="hidden";
-     document.getElementById('cajanoche').style.display="none";
-   }
-}
-
-
 
 function comerKuki() {
   if (kukis >=1) {
     if (primeracomida == true) {
       primeracomida = false;
       kukis = kukis -1;
-      spam2(`Comiste una Kuki. ¡Bien hecho!`);
+      spam2(`You ate a Kuki. Well done!`);
 
 actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
@@ -82,7 +65,7 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
                 } else if (kukis >= comercuantas) {
                     kukis = +kukis -comercuantas;
                     } else {
-                    alert("Estás queriendo comer más kukis de las que tenés");
+                    alert("You are trying to eat more kukis than you have");
                     }
       actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
 
@@ -91,14 +74,14 @@ actualizarConPluralOSingular(cuantasKukis, kukis, 'kuki');
       primerasinkukis = false;
       
     
-      spam2(`No te quedan Kukis. ¡Deberías conseguir más!`);
+      spam2(`Out of Kukis. You should get more!`);
 
 /* visibiliza el botón de compra, que entra con texto "conseguir"  */
       document.getElementById("botonCompra").style.visibility="visible";
       document.getElementById("botonCompra").classList.add("aparecer1");
     } else {
       
-      spam2(`No te quedan Kukis. ¡Bien!`);
+      spam2(`Out of Kukis. Nice!`);
       }
 };
 
@@ -114,8 +97,8 @@ function comprarKuki() {
   modificación del texto del botón de CONSEGUIR a comprar. ¿conciencia +1? */
   if (fer == 2) {
   fer = 3;
-  spam2(`Comprar cuesta dineros...`);
-  document.getElementById("botonCompra").innerHTML = "Comprar Kuki!";
+  spam2(`Kukis costs Dineros...`);
+  document.getElementById("botonCompra").innerHTML = "Buy Kukis";
   document.getElementById("botonCompra").classList.replace("aparecer1", "atenti1");
   document.getElementById("billetera").style.visibility="visible";
   document.getElementById("billetera").classList.add("aparecer1");
@@ -137,7 +120,7 @@ comprarcantidad porque su value por defecto es 0) */
             dinero = dinero -comprarcuantas;
             kukis = +kukis + +comprarcuantas;
             } else {
-            alert("Estás queriendo comprar más de lo que te alcanza con tus dineros");
+            alert("You are trying to buy more Kukis than you can afford with the Dineros you have.");
             }
 
             actualizarConPluralOSingular(cuantoDinero, dinero, 'dinero');
@@ -147,7 +130,7 @@ comprarcantidad porque su value por defecto es 0) */
 
           /* habiita caja citas, primer trabajo y comer y comprar cantidad*/
 
-          spam2(`No te queda más dinero. ¡Buenísimo!`);
+          spam2(`Out of Dinero. Outstanding!`);
           document.getElementById("botonTrabajar").classList.add("aparecer3");
           document.getElementById("smith").classList.add("aparecer2");
           document.getElementById("smith").style.visibility="visible"
@@ -338,8 +321,10 @@ function animaganamasunoout() {
   document.getElementById("ganamasuno").style.visibility="hidden";
   }
 
-/* updates both kukis and dinero input-fields. adds a "s" string in the end if
-the variable is plural (plural being: 2) */
+/* ##############################################################################
+ updates both kukis and dinero input-fields. adds a "s" string in the end if
+the variable is plural (plural being: 2) 
+##############################################################################*/
 
 function actualizarConPluralOSingular(domElement, numberVariable, word) {
   numberVariable < 2
@@ -347,9 +332,11 @@ function actualizarConPluralOSingular(domElement, numberVariable, word) {
   : domElement.innerHTML = numberVariable + ` ${word}s`;
 }
 
-/* to stop fast-múltiple-spam by just pressing enter. next function disables both
-buttons by id. sadly, when deactivated, buttons get unselected so it is also
-impossible to slowly múltiple spam by pressing enter =( */
+/* ##############################################################################
+Fisrt function is to stop fast-múltiple-spam by pressing and holding enter.
+Second function disables both buttons by id. Sadly, when deactivated, buttons get 
+unselected in the DOM so it is also impossible to slowly múltiple spam by holding enter 
+  ############################################################################## */
 
 function pausanias(tiempo) {
   botonEsforzarse.disabled=true;
@@ -361,6 +348,33 @@ function pausaniasout(tiempo) {
   botonEsforzarse.disabled=false;
   botonEsfMucho.disabled=false;
   }
+  
+/* ##############################################################################
+SPAMS
+############################################################################## */
+
+
+/* unimplemented (aparrently?) spam with a nice night with moon and electric wires pixel art */
+function cartelinfonoche() {
+  document.getElementById('cajanoche').style.display="block";
+  document.getElementById('cajanoche').style.visibility="visible";
+  tiempitoB = setTimeout(abrircaja, 100);
+   function abrircaja() {
+  document.getElementById('cajanoche').style.opacity=1;
+  }
+}
+
+/* closing function for the same spam */
+
+function cartelinfonocheout() {
+  document.getElementById('cajanoche').style.opacity=0;
+  tiempitoA = setTimeout(cerrarcaja, 1500);
+   function cerrarcaja() {
+     document.getElementById('cajanoche').style.visibility="hidden";
+     document.getElementById('cajanoche').style.display="none";
+   }
+}
+
 
 /* two different-styled spam-message coming from the mid-bottom of the screen
  and three different methods to remove them */
@@ -427,7 +441,7 @@ function musicmaybe() {
 
   spmY = document.createElement("div");
   spmY.classList.add("Y");
-  spmY.setAttribute("onclick","parentSpamOut(this)");
+  spmY.setAttribute("onclick","parentSpamOutAndPlay(this)");
   node1=document.createElement("img");
   node1.src="src/img/check.webp";
   spmY.appendChild(node1);
@@ -476,7 +490,7 @@ function spam3(texto1, texto2) {
   }*/
 
 /* Former Spam Function, creating and appending a div element (x) and setting
-in that element the atribute onClick=properSpamOut() that close the Parent Spam
+ that element with the atribute onClick=properSpamOut() that closes the Parent Spam
 Includes the former properSpamOut function.
 
 
@@ -540,6 +554,15 @@ function parentSpamOut(ej) {
   function parentOut() {
   ej.parentElement.remove();}
   }
+
+  function parentSpamOutAndPlay(ej) {
+    ej.parentElement.style.opacity=0;
+  
+    coso = setTimeout(parentOut, 1000);
+    function parentOut() {
+    ej.parentElement.remove();};
+    document.getElementById("Swingprovisando").style.display="block";    
+    }
 
 
 /* habilita los cheats. */
